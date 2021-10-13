@@ -7,17 +7,25 @@
     </head>
     <body>
         <h1>Fragen</h1>
-        <div>
-            <input type="checkbox" id="check1" name="click me">
-            <label for="check1">Please click</label>
-        </div>
         <h2>Bodenart</h2>
+        <div onclick="check_box()">
+            <input type="checkbox" id="boden::pseudogley" name="click me">
+            <label for="check1">pseudogley</label>
+        </div>
         <h2>Standort</h2>
         <h2>Probe nehmen</h2>
-          <h3>Geruchsprobe</h3>
-          <h3>Lebewesen</h3>
-          <h3>
+          <h3 class="indented1">Geruchsprobe</h3>
+          <h3 class="indented1">Lebewesen</h3>
+          <h3 class="indented1">Ernterückstände</h3>
+        <h2>Fruchtfolge</h2>
+        <h2>Nährstoffspeicherfähigkeit</h2>
+        <h2>Wasserspeicherfähigkeit</h2>
         <script>
+          function check_box(){
+            let value = document.getElementById("boden::pseudogley").checked;
+            let result = 5;
+            console.log(result);
+          }
 
         </script>
 

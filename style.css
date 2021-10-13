@@ -1,7 +1,6 @@
 body {
   background: white;
   height: 100%;
-  border-radius: 5%;
 }
 @media (prefers-color-scheme: dark) {
   body{
@@ -11,6 +10,15 @@ body {
 }
 h1 {
     text-align: center;
+}
+check_box  + label{
+  color: blue;
+}
+check_box:checked + label{
+  color: blue;
+}
+input:checked {
+  with: 50px;
 }
 .categories {
     background-color: darkgreen;
@@ -22,4 +30,7 @@ h1 {
 }
 .categories:hover{
     background-color: green;
+}
+.indented1{
+  margin-left: 20px;
 }
