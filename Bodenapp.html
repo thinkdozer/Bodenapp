@@ -5,13 +5,18 @@
         <style>
             html, body {
                 height: 100%;
+                border-radius: 5%;
+            }
+            h1 {
+                text-align: center;
             }
             .categories {
                 background-color: darkgreen;
-                width: 96%;
+                width: 92%;
                 height: 16%;
                 padding: 2%;
-                
+                margin: 2%;
+                border-radius: 20px;                
             }
             .categories:hover{
                 background-color: green;
@@ -27,9 +32,13 @@
         <div class="categories" onclick="window.location.href='Fragen.html'">
             Fragen
         </div>
-        <a href="Fragen.html">Fragen</a>
-        <a href="Brennprobe.html">Brennprobe</a>
-        <a href="pH-Bestimmung.html">pH-Bestimmung</a>
+        <div class="categories" onclick="window.location.href='pH-Bestimmung'">
+            pH-Bestimmung
+        </div>
+        <div class="categories" onclick="window.location.href='Brennprobe.html'">
+            Brennprobe
+        </div>
+        
         <script>
 
         </script>
