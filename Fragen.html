@@ -8,9 +8,33 @@
     <body>
         <h1>Fragen</h1>
         <h2>Bodenart</h2>
-        <div onclick="check_box()">
-            <input type="checkbox" id="boden::pseudogley" name="click me">
-            <label for="check1">pseudogley</label>
+        <div onclick="check_box('boden::Sand')">
+            <input type="checkbox" id="boden::Sand" name="click me">
+            <label for="check1">Sand / schluffiger Sand</label>
+        </div>
+        <div onclick="check_box('boden::lehmSand')">
+            <input type="checkbox" id="boden::lehmSand" name="click me">
+            <label for="check1">lehmiger Sand / sandiger Schluff</label>
+        </div>
+        <div onclick="check_box('boden::Schluff')">
+            <input type="checkbox" id="boden::Schluff" name="click me">
+            <label for="check1">sandiger Lehm / Schluff</label>
+        </div>
+        <div onclick="check_box('boden::schluffLehm')">
+            <input type="checkbox" id="boden::schluffLehm" name="click me">
+            <label for="check1">lehmiger Schluff / Lehm / toniger Schluff</label>
+        </div>
+        <var><div onclick="check_box('boden::Lehm')">
+            <input type="checkbox" id="boden::Lehm" name="click me">
+            <label for="check1">toniger Lehm / schluffiger Ton</label>
+        </div>
+        <var><div onclick="check_box('boden::liteTon')">
+            <input type="checkbox" id="boden::liteTon" name="click me">
+            <label for="check1">lehmiger Ton / schluffiger Ton</label>
+        </div>
+        <var><div onclick="check_box('boden::Ton')">
+            <input type="checkbox" id="boden::Ton" name="click me">
+            <label for="check1">Ton</label>
         </div>
         <h2>Standort</h2>
         <h2>Probe nehmen</h2>
@@ -24,15 +48,44 @@
           <p id="result"><p>
         </div>
         <script>
-          function check_box(){
-
-            if (document.getElementById("boden::pseudogley").checked == true) {
-              boden = 20;
-            } else {
-              boden = 10;
+        const elements = ["boden::Sand", "boden::lehmSand", "boden::Schluff", "boden::schluffLehm", "boden::Lehm", "boden::liteTon", "boden::Ton"];
+        function unset(exeption) {
+          console.log("unset(" + exeption + ")");
+          for (let i = 0; i < elements.length; i++) {
+            let element = elements[i];
+            if (!(element == exeption)) {
+              document.getElementById(element).checked = false;
             }
+          }
 
-            //let boden = 20;
+        }
+          function check_box(exeption){
+            console.log("check_box(" + exeption + ")");
+          switch (exeption) {
+              case 'boden::Sand':
+                boden = 20;
+                break;
+              case 'boden::lehmSand':
+                boden = 21;
+                break;
+              case 'boden::Schluff':
+                boden = 22;
+                break;
+              case 'boden::schluffLehm':
+                boden = 23;
+                break;
+              case 'boden::Lehm':
+                boden = 24;
+                console.log("lehm" + boden);
+                break;
+              case 'boden::liteTon':
+                boden = 25;
+                break;
+              case 'boden::Ton':
+                boden = 26;
+                break;
+            }
+            unset(exeption);
             let result = boden;
             document.getElementById("result").innerHTML = result;
           }
