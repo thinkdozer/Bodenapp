@@ -20,11 +20,21 @@
         <h2>Fruchtfolge</h2>
         <h2>Nährstoffspeicherfähigkeit</h2>
         <h2>Wasserspeicherfähigkeit</h2>
+        <div class="result">
+          <p id="result"><p>
+        </div>
         <script>
           function check_box(){
-            let value = document.getElementById("boden::pseudogley").checked;
-            let result = 5;
-            console.log(result);
+
+            if (document.getElementById("boden::pseudogley").checked == true) {
+              boden = 20;
+            } else {
+              boden = 10;
+            }
+
+            //let boden = 20;
+            let result = boden;
+            document.getElementById("result").innerHTML = result;
           }
 
         </script>

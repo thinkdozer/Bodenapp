@@ -11,14 +11,12 @@ body {
 h1 {
     text-align: center;
 }
-check_box  + label{
-  color: blue;
-}
-check_box:checked + label{
-  color: blue;
-}
-input:checked {
+.result{
+  border-color: green;
+  border-style: solid;;
   with: 50px;
+  height: 50px;
+  padding: 2%;
 }
 .categories {
     background-color: darkgreen;
