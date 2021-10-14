@@ -57,8 +57,15 @@
               document.getElementById(element).checked = false;
             }
           }
+          }
+          function unset_all() {
+          console.log("unset_all()");
+          for (let i = 0; i < elements.length; i++) {
+            let element = elements[i];
+            document.getElementById(element).checked = false;
+          }
+          }
 
-        }
           function check_box(exeption){
             console.log("check_box(" + exeption + ")");
           switch (exeption) {
@@ -76,7 +83,6 @@
                 break;
               case 'boden::Lehm':
                 boden = 24;
-                console.log("lehm" + boden);
                 break;
               case 'boden::liteTon':
                 boden = 25;
@@ -89,6 +95,7 @@
             let result = boden;
             document.getElementById("result").innerHTML = result;
           }
+          unset_all();
 
         </script>
 

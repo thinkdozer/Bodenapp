@@ -17,6 +17,7 @@ h1 {
   with: 50px;
   height: 50px;
   padding: 2%;
+  border-radius: 5px;
 }
 .categories {
     background-color: darkgreen;
