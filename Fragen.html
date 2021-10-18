@@ -52,10 +52,11 @@
           <div class="indented1">
           <h3>Geruchsprobe</h3>
             <p>Erklärung</p>
-            <var><div onclick="check_box('Geruch::modrich')">
+            <var class="clickbox"><div onclick="check_box('Geruch::modrich')">
               <input type="checkbox" id="Standort::Trocken" name="click me">
-              <label for="Standort::Trocken">modrich</label>
+              <label class="clickbox" for="Standort::Trocken">modrich</label>
             </div>
+
             </var>
             <var><div onclick="check_box('Geruch::modrich')">
               <input type="checkbox" id="Standort::Trocken" name="click me">
@@ -163,6 +164,7 @@
           }
           }
 
+
           function check_box(exeption){
             console.log("check_box(" + exeption + ")");
           switch (exeption) {
@@ -194,6 +196,13 @@
           }
           unset_all();
 
+        </script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $("Boden::Sand").hover(function(){
+                alert("test");
+            });
+        });
         </script>
 
     </body>
