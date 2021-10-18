@@ -49,7 +49,8 @@
             </div>
         <h2>Probe nehmen</h2>
           <p>Erklärung</p>
-          <h3 class="indented1">Geruchsprobe</h3>
+          <div class="indented1">
+          <h3>Geruchsprobe</h3>
             <p>Erklärung</p>
             <var><div onclick="check_box('Geruch::modrich')">
               <input type="checkbox" id="Standort::Trocken" name="click me">
@@ -61,7 +62,7 @@
               <label for="Standort::Trocken">Trocken</label>
             </div>
             </var>
-          <h3 class="indented1">Lebewesen</h3>
+          <h3>Lebewesen</h3>
             <p>Erklärung</p>
             <var><div onclick="check_box('Lebewesen::Haufen')">
               <input type="checkbox" id="Lebewesen::Haufen" name="click me">
@@ -73,7 +74,7 @@
             </div>
             </var>
 
-          <h3 class="indented1">Ernterückstände</h3>
+          <h3>Ernterückstände</h3>
             <p>Erklärung</p>
             <var><div onclick="check_box('Rückstände::vermodert')">
               <input type="checkbox" id="Rückstände::vermodert" name="click me">
@@ -85,6 +86,7 @@
               <label for="Rückstände::ganz">sind Ernterückstände noch vorhanden</label>
             </div>
             </var>
+          </div>
         <h2>Fruchtfolge</h2>
           <var><div onclick="check_box('Fruchtfolge::humuszehrer')">
             <input type="checkbox" id="Fruchtfolge::humuszehrer" name="click me">
@@ -96,7 +98,48 @@
             <label for="Fruchtfolge::humuszehrer">Haben sie viele Humusgeber in ihrer Fruchtfolge?</label>
           </div>
           </var>
+          </var>
+          <var><div onclick="check_box('Fruchtfolge::nebenprodukte')">
+            <input type="checkbox" id="Fruchtfolge::nebenprodukte" name="click me">
+            <label for="Fruchtfolge::nebenprodukte">Fahren sie Nebenprodukte ab?</label>
+          </div>
+          </var>
+          <var><div onclick="check_box('Fruchtfolge::zwischenfrüchte')">
+            <input type="checkbox" id="Fruchtfolge::zwischenfrüchte" name="click me">
+            <label for="Fruchtfolge::zwischenfrüchte">Bauen sie Zwischenfrüchte an?</label>
+          </div>
+          </var>
+          <var><div onclick="check_box('Fruchtfolge::pfluglos')">
+            <input type="checkbox" id="Fruchtfolge::pfluglos" name="click me">
+            <label for="Fruchtfolge::pfluglos">Reduzieren sie Arbeiten mit dem Pflug?</label>
+          </div>
+          </var>
+          <var><div onclick="check_box('Fruchtfolge::organik')">
+            <input type="checkbox" id="Fruchtfolge::organik" name="click me">
+            <label for="Fruchtfolge::organik">Bringen sie organischen Dünger aus?</label>
+          </div>
+          </var>
+          <var><div onclick="check_box('Fruchtfolge::legominosen')">
+            <input type="checkbox" id="Fruchtfolge::legominosen" name="click me">
+            <label for="Fruchtfolge::legominosen">Bauen sie Legominosen an?</label>
+          </div>
+          </var>
         <h2>Nährstoffspeicherfähigkeit</h2>
+          <var><div onclick="check_box('Nährstoffe::dünger_gut')">
+            <input type="checkbox" id="Nährstoffe::dünger_gut" name="click me">
+            <label for="Nährstoffe::dünger_gut">Zeigt Dünger eine gute Wirkung?</label>
+          </div>
+          </var>
+          <var><div onclick="check_box('Nährstoffe::dünger_schlecht')">
+            <input type="checkbox" id="Nährstoffe::dünger_schlecht" name="click me">
+            <label for="Nährstoffe::dünger_schlecht">Zeigt Dünger nur eine mäßige Wirkung?</label>
+          </div>
+          </var>
+          <var><div onclick="check_box('Nährstoffe::vergleichbar')">
+            <input type="checkbox" id="Nährstoffe::dünger_vergleichbar" name="click me">
+            <label for="Nährstoffe::dünger_vergleichbar">Sind ihre Erträge vergleichbar mit Feldnachbarn?</label>
+          </div>
+          </var>
         <h2>Wasserspeicherfähigkeit</h2>
         <div class="result">
           <p id="result"><p>
