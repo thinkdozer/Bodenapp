@@ -228,7 +228,8 @@
               }
             }
           }
-          function solve(obj){
+          function solve(){
+            let obj = getvalues();
             for (const i in obj){
               let div = `${i}`;
               console.log("type: " + obj[div].type);
@@ -243,8 +244,12 @@
               if (part_hum == undefined) {
                 var part_hum = obj[div].fallback;
               }
-              console.log("part_hum: " + part_hum);
+              console.log(div + ": " + part_hum);
+              var dynamicname = div;
+              window[dynamicname] = part_hum;
             }
+            let hum = boden;
+            document.getElementById("result").innerHTML = hum;
           }
           function calculate(){
             let test = getvalues();
@@ -257,13 +262,13 @@
             let result = boden;
             document.getElementById("result").innerHTML = result;
           }
-          //unset_all();
-          let obj = getvalues();
-          solve(obj);
+          unset_all();
 
         </script>
         <script>
-
+          var dynamicname = 'name1_';
+          window[dynamicname] = 'myvalue';
+          console.log(name1_);
         </script>
 
     </body>
