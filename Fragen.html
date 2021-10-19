@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
 
     </head>
-    <body>
+    <body onclick="calculate()">
         <h1>Fragen</h1>
         <h2>Bodenart</h2>
         <p>Erklärung</p>
@@ -197,15 +197,14 @@
             let result = boden;
             document.getElementById("result").innerHTML = result;
           }
+          function calculate(){
+            alert('hallo');
+          }
           unset_all();
 
         </script>
-        <script type="text/javascript">
-        $(document).ready(function(){
-            $("Boden::Sand").hover(function(){
-                alert("test");
-            });
-        });
+        <script>
+
         </script>
 
     </body>
