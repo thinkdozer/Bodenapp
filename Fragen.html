@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body onclick="calculate()">
+    <body onclick="solve()">
         <h1>Fragen</h1>
         <h2>Bodenart</h2>
         <p>Erklärung</p>
@@ -205,19 +205,49 @@
             */
           }
           function extr_radio(obj){
+            console.log("extr_radio(" + obj + ")");
             for (const i in obj.boden){
               let name = `${i}`;
-              //console.log(`${i}`);
-              //console.log(document.getElementById(`${i}`).checked);
+            //console.log(`${i}`);
+            //console.log(document.getElementById(`${i}`).checked);
               if (document.getElementById(`${i}`).checked){
                 let boden = obj.boden[name];
                 return(boden);
               }
             }
           }
+          function extr_radio_2(obj){
+            console.log("extr_radio(" + obj + ")");
+            console.log(obj);
+            for (const i in obj){
+              let name = `${i}`;
+              console.log(`${i}` + ": " + document.getElementById(`${i}`).checked);
+              if (document.getElementById(`${i}`).checked){
+                let boden = obj[name];
+                return(boden);
+              }
+            }
+          }
+          function solve(obj){
+            for (const i in obj){
+              let div = `${i}`;
+              console.log("type: " + obj[div].type);
+              if (obj[div].type == "radio") {
+                var part_hum = extr_radio_2(obj[div].assigns);
+              }else if (obj[div].type == "checkbox") {
+                var part_hum = extr_checkbox(obj);
+              } else {
+                console.log("Err: wrong type in " + obj[div]);
+                break;
+              }
+              if (part_hum == undefined) {
+                var part_hum = obj[div].fallback;
+              }
+              console.log("part_hum: " + part_hum);
+            }
+          }
           function calculate(){
             let test = getvalues();
-            console.log("try");
             if (extr_radio(test) != undefined) {
               var boden = extr_radio(test);
             }else {
@@ -227,7 +257,9 @@
             let result = boden;
             document.getElementById("result").innerHTML = result;
           }
-          unset_all();
+          //unset_all();
+          let obj = getvalues();
+          solve(obj);
 
         </script>
         <script>
