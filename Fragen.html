@@ -42,11 +42,11 @@
           <h2>Standort</h2>
             <p>Erklärung</p>
             <var><div onclick="check_box('Standort::Naß')">
-              <input type="checkbox" id="Standort::Naß" name="click me">
+              <input type="radio" id="Standort::Naß" name="click me">
               <label for="Standort::Naß">Naß</label>
             </div>
             <var><div onclick="check_box('Standort::Trocken')">
-              <input type="checkbox" id="Standort::Trocken" name="click me">
+              <input type="radio" id="Standort::Trocken" name="click me">
               <label for="Standort::Trocken">Trocken</label>
             </div>
         <h2>Probe nehmen</h2>
@@ -55,17 +55,17 @@
           <h3>Geruchsprobe</h3>
             <p>Erklärung</p>
             <var class="clickbox"><div onclick="check_box('Geruch::modrich')">
-              <input type="checkbox" id="Geruch::modrich" name="click me">
+              <input type="radio" id="Geruch::modrich" name="click me">
               <label class="clickbox" for="Geruch::modrich">modrich / erdig</label>
             </div>
             </var>
             <var><div onclick="check_box('Geruch::moorig')">
-              <input type="checkbox" id="Geruch::moorig" name="click me">
+              <input type="radio" id="Geruch::moorig" name="click me">
               <label for="Geruch::moorig">sauer / moorig</label>
             </div>
             </var>
             <div onclick="check_box('Geruch::nichts')">
-                <input type="checkbox" id="Geruch::nichts" name="click me">
+                <input type="radio" id="Geruch::nichts" name="click me">
                 <label for="Geruch::nichts">neutral</label>
             </div>
           <h3>Lebewesen</h3>
@@ -83,28 +83,29 @@
           <h3>Ernterückstände</h3>
             <p>Erklärung</p>
             <var><div onclick="check_box('Rückstände::vermodert')">
-              <input type="checkbox" id="Rückstände::vermodert" name="click me">
+              <input type="radio" id="Rückstände::vermodert" name="click me">
               <label for="Rückstände::vermodert">sind Ernterückstände fast verschwunden</label>
             </div>
             </var>
             <var><div onclick="check_box('Rückstände::ganz')">
-              <input type="checkbox" id="Rückstände::ganz" name="click me">
+              <input type="radio" id="Rückstände::ganz" name="click me">
               <label for="Rückstände::ganz">sind Ernterückstände noch vorhanden</label>
             </div>
             </var>
           </div>
         <h2>Fruchtfolge</h2>
+        <div>
           <var><div onclick="check_box('Fruchtfolge::humuszehrer')">
-            <input type="checkbox" id="Fruchtfolge::humuszehrer" name="click me">
+            <input type="radio" id="Fruchtfolge::humuszehrer" name="click me">
             <label for="Fruchtfolge::humuszehrer">Haben sie viele Humuszehrer in ihrer Fruchtfolge?</label>
           </div>
           </var>
           <var><div onclick="check_box('Fruchtfolge::humuszehrer')">
-            <input type="checkbox" id="Fruchtfolge::humusgeber" name="click me">
+            <input type="radio" id="Fruchtfolge::humusgeber" name="click me">
             <label for="Fruchtfolge::humusgeber">Haben sie viele Humusgeber in ihrer Fruchtfolge?</label>
           </div>
           </var>
-          </var>
+        </div>
           <var><div onclick="check_box('Fruchtfolge::nebenprodukte')">
             <input type="checkbox" id="Fruchtfolge::nebenprodukte" name="click me">
             <label for="Fruchtfolge::nebenprodukte">Fahren sie Nebenprodukte ab?</label>
@@ -132,12 +133,12 @@
           </var>
         <h2>Nährstoffspeicherfähigkeit</h2>
           <var><div onclick="check_box('Nährstoffe::dünger_gut')">
-            <input type="checkbox" id="Nährstoffe::dünger_gut" name="click me">
+            <input type="radio" id="Nährstoffe::dünger_gut" name="click me">
             <label for="Nährstoffe::dünger_gut">Zeigt Dünger eine gute Wirkung?</label>
           </div>
           </var>
           <var><div onclick="check_box('Nährstoffe::dünger_schlecht')">
-            <input type="checkbox" id="Nährstoffe::dünger_schlecht" name="click me">
+            <input type="radio" id="Nährstoffe::dünger_schlecht" name="click me">
             <label for="Nährstoffe::dünger_schlecht">Zeigt Dünger nur eine mäßige Wirkung?</label>
           </div>
           </var>
