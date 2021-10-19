@@ -207,8 +207,8 @@
           function extr_radio(obj){
             for (const i in obj.boden){
               let name = `${i}`;
-              console.log(`${i}`);
-              console.log(document.getElementById(`${i}`).checked);
+              //console.log(`${i}`);
+              //console.log(document.getElementById(`${i}`).checked);
               if (document.getElementById(`${i}`).checked){
                 let boden = obj.boden[name];
                 return(boden);
@@ -217,7 +217,13 @@
           }
           function calculate(){
             let test = getvalues();
-            let boden = extr_radio(test);
+            console.log("try");
+            if (extr_radio(test) != undefined) {
+              var boden = extr_radio(test);
+            }else {
+              var boden = 10;
+            }
+            console.log("boden: " + boden);
             let result = boden;
             document.getElementById("result").innerHTML = result;
           }
