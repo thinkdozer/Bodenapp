@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css">
-
     </head>
     <body onclick="calculate()">
         <h1>Fragen</h1>
@@ -152,6 +151,7 @@
         <div class="result">
           <p id="result"><p>
         </div>
+        <script src="values.js"></script>
         <script>
         const elements = ["boden::Sand", "boden::lehmSand", "boden::Schluff", "boden::schluffLehm", "boden::Lehm", "boden::liteTon", "boden::Ton"];
         function unset(exeption) {
@@ -204,8 +204,21 @@
             document.getElementById("result").innerHTML = result;
             */
           }
+          function extr_radio(obj){
+            for (const i in obj.boden){
+              let name = `${i}`;
+              console.log(`${i}`);
+              console.log(document.getElementById(`${i}`).checked);
+              if (document.getElementById(`${i}`).checked){
+                let boden = obj.boden[name];
+                return(boden);
+              }
+            }
+          }
           function calculate(){
-            let result = 42;
+            let test = getvalues();
+            let boden = extr_radio(test);
+            let result = boden;
             document.getElementById("result").innerHTML = result;
           }
           unset_all();
