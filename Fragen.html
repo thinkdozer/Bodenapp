@@ -9,34 +9,36 @@
         <h1>Fragen</h1>
         <h2>Bodenart</h2>
         <p>Erklärung</p>
+        <div class="boden">
           <div onclick="check_box('boden::Sand')">
-              <input type="checkbox" id="boden::Sand" name="click me">
+              <input type="radio" id="boden::Sand" name="click me">
               <label for="boden::Sand">schluffiger Sand</label>
           </div>
           <div onclick="check_box('boden::lehmSand')">
-              <input type="checkbox" id="boden::lehmSand" name="click me">
+              <input type="radio" id="boden::lehmSand" name="click me">
               <label for="boden::lehmSand">lehmiger Sand / sandiger Schluff</label>
           </div>
           <div onclick="check_box('boden::Schluff')">
-              <input type="checkbox" id="boden::Schluff" name="click me">
+              <input type="radio" id="boden::Schluff" name="click me">
               <label for="boden::Schluff">sandiger Lehm / Schluff</label>
           </div>
           <div onclick="check_box('boden::schluffLehm')">
-              <input type="checkbox" id="boden::schluffLehm" name="click me">
+              <input type="radio" id="boden::schluffLehm" name="click me">
               <label for="boden::schluffLehm">lehmiger Schluff / Lehm / toniger Schluff</label>
           </div>
           <var><div onclick="check_box('boden::Lehm')">
-              <input type="checkbox" id="boden::Lehm" name="click me">
+              <input type="radio" id="boden::Lehm" name="click me">
               <label for="boden::Lehm">toniger Lehm / schluffiger Ton</label>
           </div>
           <var><div onclick="check_box('boden::liteTon')">
-              <input type="checkbox" id="boden::liteTon" name="click me">
+              <input type="radio" id="boden::liteTon" name="click me">
               <label for="boden::liteTon">lehmiger Ton / schluffiger Ton</label>
           </div>
           <var><div onclick="check_box('boden::Ton')">
-              <input type="checkbox" id="boden::Ton" name="click me">
+              <input type="radio" id="boden::Ton" name="click me">
               <label for="boden::Ton">Ton</label>
           </div>
+        </div>
           <h2>Standort</h2>
             <p>Erklärung</p>
             <var><div onclick="check_box('Standort::Naß')">
@@ -169,6 +171,7 @@
 
 
           function check_box(exeption){
+            /*
             console.log("check_box(" + exeption + ")");
           switch (exeption) {
               case 'boden::Sand':
@@ -192,13 +195,16 @@
               case 'boden::Ton':
                 boden = 26;
                 break;
+
             }
             unset(exeption);
             let result = boden;
             document.getElementById("result").innerHTML = result;
+            */
           }
           function calculate(){
-            alert('hallo');
+            let result = 42;
+            document.getElementById("result").innerHTML = result;
           }
           unset_all();
 
