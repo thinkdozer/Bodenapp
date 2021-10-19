@@ -53,16 +53,19 @@
           <h3>Geruchsprobe</h3>
             <p>Erklärung</p>
             <var class="clickbox"><div onclick="check_box('Geruch::modrich')">
-              <input type="checkbox" id="Standort::Trocken" name="click me">
-              <label class="clickbox" for="Standort::Trocken">modrich</label>
-            </div>
-
-            </var>
-            <var><div onclick="check_box('Geruch::modrich')">
-              <input type="checkbox" id="Standort::Trocken" name="click me">
-              <label for="Standort::Trocken">Trocken</label>
+              <input type="checkbox" id="Geruch::modrich" name="click me">
+              <label class="clickbox" for="Geruch::modrich">modrich / erdig</label>
             </div>
             </var>
+            <var><div onclick="check_box('Geruch::moorig')">
+              <input type="checkbox" id="Geruch::moorig" name="click me">
+              <label for="Geruch::moorig">sauer / moorig</label>
+            </div>
+            </var>
+            <div onclick="check_box('Geruch::nichts')">
+                <input type="checkbox" id="Geruch::nichts" name="click me">
+                <label for="Geruch::nichts">neutral</label>
+            </div>
           <h3>Lebewesen</h3>
             <p>Erklärung</p>
             <var><div onclick="check_box('Lebewesen::Haufen')">
@@ -96,7 +99,7 @@
           </var>
           <var><div onclick="check_box('Fruchtfolge::humuszehrer')">
             <input type="checkbox" id="Fruchtfolge::humusgeber" name="click me">
-            <label for="Fruchtfolge::humuszehrer">Haben sie viele Humusgeber in ihrer Fruchtfolge?</label>
+            <label for="Fruchtfolge::humusgeber">Haben sie viele Humusgeber in ihrer Fruchtfolge?</label>
           </div>
           </var>
           </var>
