@@ -72,7 +72,7 @@
           <h3>Lebewesen</h3>
             <p>Erklärung</p>
             <var><div onclick="check_box('Lebewesen::Haufen')">
-              <input type="checkbox" id="Lebewesen::Haufen" name="click me">
+              <input type="checkbox" id="Lebewesen::Haufen" name="lebewesen">
               <label for="Lebewesen::Haufen">sehen sie Regenwurmhaufen</label>
             </div>
             <var><div onclick="check_box('Lebewesen::Gaenge')">
@@ -84,12 +84,12 @@
           <h3>Ernterückstände</h3>
             <p>Erklärung</p>
             <var><div onclick="check_box('Rückstände::vermodert')">
-              <input type="radio" id="Rückstände::vermodert" name="click me">
+              <input type="radio" id="Rückstände::vermodert" name="rückstände">
               <label for="Rückstände::vermodert">sind Ernterückstände fast verschwunden</label>
             </div>
             </var>
             <var><div onclick="check_box('Rückstände::ganz')">
-              <input type="radio" id="Rückstände::ganz" name="click me">
+              <input type="radio" id="Rückstände::ganz" name="rückstände">
               <label for="Rückstände::ganz">sind Ernterückstände noch vorhanden</label>
             </div>
             </var>
@@ -97,12 +97,12 @@
         <h2>Fruchtfolge</h2>
         <div>
           <var><div onclick="check_box('Fruchtfolge::humuszehrer')">
-            <input type="radio" id="Fruchtfolge::humuszehrer" name="click me">
+            <input type="radio" id="Fruchtfolge::humuszehrer" name="humuszehrer">
             <label for="Fruchtfolge::humuszehrer">Haben sie viele Humuszehrer in ihrer Fruchtfolge?</label>
           </div>
           </var>
-          <var><div onclick="check_box('Fruchtfolge::humuszehrer')">
-            <input type="radio" id="Fruchtfolge::humusgeber" name="click me">
+          <var><div onclick="check_box('Fruchtfolge::humusgeber')">
+            <input type="radio" id="Fruchtfolge::humusgeber" name="humuszehrer">
             <label for="Fruchtfolge::humusgeber">Haben sie viele Humusgeber in ihrer Fruchtfolge?</label>
           </div>
           </var>
@@ -134,12 +134,12 @@
           </var>
         <h2>Nährstoffspeicherfähigkeit</h2>
           <var><div onclick="check_box('Nährstoffe::dünger_gut')">
-            <input type="radio" id="Nährstoffe::dünger_gut" name="click me">
+            <input type="radio" id="Nährstoffe::dünger_gut" name="dünger">
             <label for="Nährstoffe::dünger_gut">Zeigt Dünger eine gute Wirkung?</label>
           </div>
           </var>
           <var><div onclick="check_box('Nährstoffe::dünger_schlecht')">
-            <input type="radio" id="Nährstoffe::dünger_schlecht" name="click me">
+            <input type="radio" id="Nährstoffe::dünger_schlecht" name="dünger">
             <label for="Nährstoffe::dünger_schlecht">Zeigt Dünger nur eine mäßige Wirkung?</label>
           </div>
           </var>
@@ -165,6 +165,7 @@
             }
           }
           }
+
           function unset_all() {
           console.log("unset_all()");
           for (let i = 0; i < elements.length; i++) {
@@ -172,7 +173,13 @@
             document.getElementById(element).checked = false;
           }
           }
-
+          /*
+          function unset_all(){
+            console.log("unset_all()");
+            document.getElementsByTagName("checkbox").checked = false;
+            document.getElementsByTagName("radio").checked = false;
+          }
+          */
 
           function check_box(exeption){
             /*
@@ -218,36 +225,72 @@
               }
             }
           }
-          function extr_radio_2(obj){
-            console.log("extr_radio(" + obj + ")");
+          function extr_radio_2(obj, hum){
+            console.log("extr_radio_2(" + obj + ")");
             console.log(obj);
+            console.log("obj.calculation = " + obj.calculation);
+            let assings = obj.assigns;
+            console.log("assigns: ");
+            console.log(assings);
+            for (const i in assings){
+              let name = `${i}`;
+              console.log(`${i}` + ": " + document.getElementById(`${i}`).checked);
+              if (document.getElementById(`${i}`).checked){
+                var boden = assings[name];
+              }
+
+            }
+            if (boden == undefined) {
+              boden = obj.fallback;
+            }
+            if (obj.calculation == "overwrite") {
+              console.log("extr_radio_2(): overwrite hum");
+              hum = boden;
+            }else if (obj.calculation == "addition") {
+              hum = Number(hum) + Number(boden);
+            }
+            return(hum);
+          }
+          function extr_checkbox(obj){
+            console.log("extr_checkbox(" + obj +")");
+            console.log(obj);
+            /*
             for (const i in obj){
               let name = `${i}`;
-              //console.log(`${i}` + ": " + document.getElementById(`${i}`).checked);
-              if (document.getElementById(`${i}`).checked){
-                let boden = obj[name];
-                return(boden);
+              if (document.getElementById(`${i}`).checked) {
+                let value = obj[name];
+                return(value);
               }
             }
+            */
           }
           function solve(){
             console.log("solve()");
             let obj = getvalues();
-            let hum = 10;
+            var hum = 10;
             for (const i in obj){
               let div = `${i}`;
               console.log("type: " + obj[div].type);
-
               if (obj[div].type == "radio") {
-                console.log("solve(): radio");
-                var part_hum = extr_radio_2(obj[div].assigns);
+                  console.log("solve(): radio");
+                  hum = extr_radio_2(obj[div], hum);
+                  /*
+                  if (obj[div].calculation == "overwrite") {
+                    hum = part_hum;
+                    console.log("solve(): overwritten hum to " + hum);
+                  }if (obj[div].calculation == "addition") {
+                    console.log("addition would be: " + hum + " + " + part_hum);
+                    hum = Number(hum) + Number(part_hum);
+                    console.log("solve(): added to hum hum = " + hum);
+                  }
+                  */
               }else if (obj[div].type == "checkbox") {
-                var part_hum = extr_checkbox(obj);
+                var part_hum = extr_checkbox(obj[div].assigns);
               } else {
                 console.log("Err: wrong type in " + obj[div]);
                 break;
               }
-
+/*
               if (part_hum == undefined) {
                 var part_hum = obj[div].fallback;
               }
@@ -264,6 +307,7 @@
               var dynamicname = div;
               window[dynamicname] = part_hum;
               */
+              console.log(" hum = " + hum);
             }
             //let hum = boden;
             console.log("solve(): hum = " + hum);
@@ -284,9 +328,11 @@
 
         </script>
         <script>
+        /*
           var dynamicname = 'name1_';
           window[dynamicname] = 'myvalue';
           console.log(name1_);
+          */
         </script>
 
     </body>

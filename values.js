@@ -22,6 +22,15 @@ let x = {
         "Standort::Naß": "5",
         "Standort::Trocken": "-3",
       }
+    },
+    "lebewesen": {
+      "type": "checkbox",
+      "fallback": "0",
+      "calculation": "addition",
+      "assigns": {
+        "Lebewesen::Haufen": "3",
+        "Lebewesen::Gaenge": "3",
+      }
     }
   };
 return x;
