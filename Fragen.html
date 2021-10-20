@@ -255,10 +255,10 @@
             console.log("extr_checkbox(" + obj + ")");
             console.log(obj);
             console.log("obj.calculation = " + obj.calculation);
-            var assings = obj.assigns;
+            let assings = obj.assigns;
             console.log("assigns: ");
-            console.log(assigns);
-            for (const i in assigns){
+            console.log(assings);
+            for (const i in assings){
               let name = `${i}`;
               if (document.getElementById(`${i}`).checked) {
                 var part_hum = assings[name];
