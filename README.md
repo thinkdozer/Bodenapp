@@ -1,6 +1,15 @@
 # Bodenapp
 The *Bodenapp* helps to guess the amount of humus in the soil by answering some questions
 
+![example]{example.jpg}
+
+## Future plans
+
+1. Brennprobe
+2. pH-Bestimmung
+3. Design
+4. PWA
+
 ## Usage
 ### Beginners
 
