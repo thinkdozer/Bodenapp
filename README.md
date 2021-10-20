@@ -3,7 +3,7 @@ The *Bodenapp* helps to guess the amount of humus in the soil by answering some 
 
 ![example]{example.jpg}
 
-## Future plans
+## plans
 
 1. Brennprobe
 2. pH-Bestimmung
