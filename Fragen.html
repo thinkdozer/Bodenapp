@@ -8,63 +8,65 @@
         <h1>Fragen</h1>
         <h2>Bodenart</h2>
         <p>Erklärung</p>
-        <div class="boden">
+        <form class="boden">
           <div onclick="check_box('boden::Sand')">
-              <input type="radio" id="boden::Sand" name="click me">
+              <input type="radio" id="boden::Sand" name="boden">
               <label for="boden::Sand">schluffiger Sand</label>
           </div>
           <div onclick="check_box('boden::lehmSand')">
-              <input type="radio" id="boden::lehmSand" name="click me">
+              <input type="radio" id="boden::lehmSand" name="boden">
               <label for="boden::lehmSand">lehmiger Sand / sandiger Schluff</label>
           </div>
           <div onclick="check_box('boden::Schluff')">
-              <input type="radio" id="boden::Schluff" name="click me">
+              <input type="radio" id="boden::Schluff" name="boden">
               <label for="boden::Schluff">sandiger Lehm / Schluff</label>
           </div>
           <div onclick="check_box('boden::schluffLehm')">
-              <input type="radio" id="boden::schluffLehm" name="click me">
+              <input type="radio" id="boden::schluffLehm" name="boden">
               <label for="boden::schluffLehm">lehmiger Schluff / Lehm / toniger Schluff</label>
           </div>
           <var><div onclick="check_box('boden::Lehm')">
-              <input type="radio" id="boden::Lehm" name="click me">
+              <input type="radio" id="boden::Lehm" name="boden">
               <label for="boden::Lehm">toniger Lehm / schluffiger Ton</label>
           </div>
           <var><div onclick="check_box('boden::liteTon')">
-              <input type="radio" id="boden::liteTon" name="click me">
+              <input type="radio" id="boden::liteTon" name="boden">
               <label for="boden::liteTon">lehmiger Ton / schluffiger Ton</label>
           </div>
           <var><div onclick="check_box('boden::Ton')">
-              <input type="radio" id="boden::Ton" name="click me">
+              <input type="radio" id="boden::Ton" name="boden">
               <label for="boden::Ton">Ton</label>
-          </div>
+          </form>
         </div>
           <h2>Standort</h2>
             <p>Erklärung</p>
+            <from class="standort">
             <var><div onclick="check_box('Standort::Naß')">
-              <input type="radio" id="Standort::Naß" name="click me">
+              <input type="radio" id="Standort::Naß" name="standort">
               <label for="Standort::Naß">Naß</label>
             </div>
             <var><div onclick="check_box('Standort::Trocken')">
-              <input type="radio" id="Standort::Trocken" name="click me">
+              <input type="radio" id="Standort::Trocken" name="standort">
               <label for="Standort::Trocken">Trocken</label>
             </div>
+          </form>
         <h2>Probe nehmen</h2>
           <p>Erklärung</p>
           <div class="indented1">
           <h3>Geruchsprobe</h3>
             <p>Erklärung</p>
             <var class="clickbox"><div onclick="check_box('Geruch::modrich')">
-              <input type="radio" id="Geruch::modrich" name="click me">
+              <input type="radio" id="Geruch::modrich" name="geruch">
               <label class="clickbox" for="Geruch::modrich">modrich / erdig</label>
             </div>
             </var>
             <var><div onclick="check_box('Geruch::moorig')">
-              <input type="radio" id="Geruch::moorig" name="click me">
+              <input type="radio" id="Geruch::moorig" name="geruch">
               <label for="Geruch::moorig">sauer / moorig</label>
             </div>
             </var>
             <div onclick="check_box('Geruch::nichts')">
-                <input type="radio" id="Geruch::nichts" name="click me">
+                <input type="radio" id="Geruch::nichts" name="geruch">
                 <label for="Geruch::nichts">neutral</label>
             </div>
           <h3>Lebewesen</h3>
@@ -229,6 +231,7 @@
             }
           }
           function solve(){
+            console.log("solve()");
             let obj = getvalues();
             let hum = 10;
             for (const i in obj){
@@ -236,6 +239,7 @@
               console.log("type: " + obj[div].type);
 
               if (obj[div].type == "radio") {
+                console.log("solve(): radio");
                 var part_hum = extr_radio_2(obj[div].assigns);
               }else if (obj[div].type == "checkbox") {
                 var part_hum = extr_checkbox(obj);
@@ -250,8 +254,11 @@
               console.log(div + ": " + part_hum);
               if (obj[div].calculation == "overwrite") {
                 hum = part_hum;
+                console.log("solve(): overwritten hum to " + hum);
               }if (obj[div].calculation == "addition") {
-                hum = hum + part_hum;
+                console.log("addition would be: " + hum + " + " + part_hum);
+                hum = Number(hum) + Number(part_hum);
+                console.log("solve(): added to hum hum = " + hum);
               }
               /*
               var dynamicname = div;
@@ -259,6 +266,7 @@
               */
             }
             //let hum = boden;
+            console.log("solve(): hum = " + hum);
             document.getElementById("result").innerHTML = hum;
           }
           function calculate(){

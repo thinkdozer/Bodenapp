@@ -37,3 +37,10 @@ h1 {
 .indented1{
   margin-left: 20px;
 }
+.boden{
+  name: boden;
+}
+
+.standort{
+  name: standort;
+}
