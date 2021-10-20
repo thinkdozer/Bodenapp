@@ -23,15 +23,55 @@ let x = {
         "Standort::Trocken": "-3",
       }
     },
-    "standort": {
+    "lebewesen": {
       "type": "checkbox",
       "fallback": "0",
       "calculation": "addition",
       "assigns": {
-        "Standort::Naß": "5",
-        "Standort::Trocken": "-3",
+        "Lebewesen::Haufen": "3",
+        "Lebewesen::Gaenge": "3",
       }
     },
+    "rückstände":{
+      "type": "radio",
+      "fallback": "0",
+      "calculation": "addition",
+      "assigns": {
+        "Rückstände::vermodert": "5",
+        "Rückstände::ganz": "-5",
+      }
+    },
+    "humuszehrer":{
+      "type": "radio",
+      "fallback": 0,
+      "calculation": "addition",
+      "assigns": {
+        "Fruchtfolge::humuszehrer": "-8",
+        "Fruchtfolge::humusgeber": "8",
+      }
+    },
+    "fruchtfolge":{
+      "type": "checkbox",
+      "fallback": "0",
+      "calculation": "addition",
+      "assigns":{
+        "Fruchtfolge::nebenprodukte": "-3",
+        "Fruchtfolge::zwischenfrüchte": "4",
+        "Fruchtfolge::pfluglos": "3",
+        "Fruchtfolge::organik": "3",
+        "Fruchtfolge::legominosen": "5"
+      }
+    },
+    "nährstoffe":{
+      "type": "radio",
+      "fallback": "0",
+      "calculation": "addition",
+      "assigns":{
+        "Nährstoffe::dünger_gut": "3",
+        "Nährstoffe::dünger_schlecht": "-3",
+        "Nährstoffe::vergleichbar": "3"
+      }
+    }
   };
 return x;
 }

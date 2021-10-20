@@ -144,8 +144,8 @@
           </div>
           </var>
           <var><div onclick="check_box('Nährstoffe::vergleichbar')">
-            <input type="checkbox" id="Nährstoffe::dünger_vergleichbar" name="click me">
-            <label for="Nährstoffe::dünger_vergleichbar">Sind ihre Erträge vergleichbar mit Feldnachbarn?</label>
+            <input type="checkbox" id="Nährstoffe::vergleichbar" name="click me">
+            <label for="Nährstoffe::vergleichbar">Sind ihre Erträge vergleichbar mit Feldnachbarn?</label>
           </div>
           </var>
           <hr></hr>
@@ -229,14 +229,15 @@
             console.log("extr_radio_2(" + obj + ")");
             console.log(obj);
             console.log("obj.calculation = " + obj.calculation);
-            let assings = obj.assigns;
+            let assigns = obj.assigns;
             console.log("assigns: ");
-            console.log(assings);
-            for (const i in assings){
+            console.log(assigns);
+            for (const i in assigns){
               let name = `${i}`;
               console.log(`${i}` + ": " + document.getElementById(`${i}`).checked);
               if (document.getElementById(`${i}`).checked){
-                var boden = assings[name];
+                var boden = assigns[name];
+                console.log("set boden to: " + boden);
               }
 
             }
@@ -247,6 +248,7 @@
               console.log("extr_radio_2(): overwrite hum");
               hum = boden;
             }else if (obj.calculation == "addition") {
+              console.log("added boden: " + boden + "to hum: " + hum);
               hum = Number(hum) + Number(boden);
             }
             return(hum);
@@ -255,13 +257,13 @@
             console.log("extr_checkbox(" + obj + ")");
             console.log(obj);
             console.log("obj.calculation = " + obj.calculation);
-            let assings = obj.assigns;
+            let assigns = obj.assigns;
             console.log("assigns: ");
-            console.log(assings);
-            for (const i in assings){
+            console.log(assigns);
+            for (const i in assigns){
               let name = `${i}`;
               if (document.getElementById(`${i}`).checked) {
-                var part_hum = assings[name];
+                var part_hum = assigns[name];
                 if (obj.calculation == "addition") {
                   hum = Number(hum) + Number(part_hum);
                 }else if (obj.calculation == "overwrite") {
