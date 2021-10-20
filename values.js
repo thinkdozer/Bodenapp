@@ -3,6 +3,7 @@ let x = {
     "boden": {
       "type": "radio",
       "fallback": "10",
+      "calculation": "overwrite",
       "assigns":{
         "boden::Sand": "20",
         "boden::lehmSand": "21",

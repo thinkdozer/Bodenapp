@@ -221,7 +221,7 @@
             console.log(obj);
             for (const i in obj){
               let name = `${i}`;
-              console.log(`${i}` + ": " + document.getElementById(`${i}`).checked);
+              //console.log(`${i}` + ": " + document.getElementById(`${i}`).checked);
               if (document.getElementById(`${i}`).checked){
                 let boden = obj[name];
                 return(boden);
@@ -230,9 +230,11 @@
           }
           function solve(){
             let obj = getvalues();
+            let hum = 10;
             for (const i in obj){
               let div = `${i}`;
               console.log("type: " + obj[div].type);
+
               if (obj[div].type == "radio") {
                 var part_hum = extr_radio_2(obj[div].assigns);
               }else if (obj[div].type == "checkbox") {
@@ -241,14 +243,22 @@
                 console.log("Err: wrong type in " + obj[div]);
                 break;
               }
+
               if (part_hum == undefined) {
                 var part_hum = obj[div].fallback;
               }
               console.log(div + ": " + part_hum);
+              if (obj[div].calculation == "overwrite") {
+                hum = part_hum;
+              }if (obj[div].calculation == "addition") {
+                hum = hum + part_hum;
+              }
+              /*
               var dynamicname = div;
               window[dynamicname] = part_hum;
+              */
             }
-            let hum = boden;
+            //let hum = boden;
             document.getElementById("result").innerHTML = hum;
           }
           function calculate(){
