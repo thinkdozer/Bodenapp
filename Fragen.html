@@ -251,18 +251,27 @@
             }
             return(hum);
           }
-          function extr_checkbox(obj){
-            console.log("extr_checkbox(" + obj +")");
+          function extr_checkbox(obj, hum){
+            console.log("extr_checkbox(" + obj + ")");
             console.log(obj);
-            /*
-            for (const i in obj){
+            console.log("obj.calculation = " + obj.calculation);
+            var assings = obj.assigns;
+            console.log("assigns: ");
+            console.log(assigns);
+            for (const i in assigns){
               let name = `${i}`;
               if (document.getElementById(`${i}`).checked) {
-                let value = obj[name];
-                return(value);
+                var part_hum = assings[name];
+                if (obj.calculation == "addition") {
+                  hum = Number(hum) + Number(part_hum);
+                }else if (obj.calculation == "overwrite") {
+                  hum = Number(part_hum);
+                } else{
+                  console.log("Err: no calculation type in " + obj);
+                }
               }
             }
-            */
+            return(hum);
           }
           function solve(){
             console.log("solve()");
@@ -285,7 +294,7 @@
                   }
                   */
               }else if (obj[div].type == "checkbox") {
-                var part_hum = extr_checkbox(obj[div].assigns);
+                hum = extr_checkbox(obj[div], hum);
               } else {
                 console.log("Err: wrong type in " + obj[div]);
                 break;
