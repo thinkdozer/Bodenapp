@@ -23,7 +23,7 @@ The *Bodenapp* helps to guess the amount of humus in the soil by answering some 
 
 or open it in file manager:
 
-![open in file manager](filemananager.jpg)
+![open in file manager](filemanager.jpg)
 
 ### Advanced
 
