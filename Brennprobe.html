@@ -6,8 +6,35 @@
     </head>
     <body>
         <h1>Brennprobe</h1>
+        <ol>
+            <li>
+                <p>Nehmen sie eine Probe von ihrem Boden</p>
+                //img
+            </li>
+            <li>
+                <p>Erhitzen sie die Probe für eine Weile </p>
+                //img
+            </li>
+            <li>
+                <p>Wiegen sie ihre Probe</p>
+            </li>
+            <li>
+                <p>Verbrennen sie das organische Material in der Probe, dazu können sie einen Bunsenbrenner verwenden, aber auch gleichwertiges, wie etwa einen Unkrautverbrenner</p>
+                //img
+            </li>
+            <li>
+                <p>Wiegen sie ihre Probe erneut. Der Verlust ist in etwa der Humusgehalt an der Probe. (1. Gewicht - 2. Gewicht) / 1. Gewicht = Humusanteil</p>
+                <label for="1. Gewicht">1. Gewicht:</label><input name="1. Gewicht" id="1. Gewicht">
+                <label for="2. Gewicht">2. Gewicht:</label><input name="2. Gewicht" id="2. Gewicht">
+                <div class="result">
+                    <p id="result"></p>
+                </div>
+            </li>
+        </ol>
         <script>
-
+            function calculate(){
+                document.getElementById("result").innerHTML = Number()
+            }
         </script>
 
     </body>
