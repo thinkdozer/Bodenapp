@@ -19,9 +19,16 @@ input{
   margin-bottom: 1%;
   font-size: 2em;
 }
-.clickbox:hover{
-  alert("test");
+
+input[type=checkbox]{
+  width: 0.5em;
+  height: 0.5em;
 }
+input[type=radio]{
+  width: 0.5em;
+  height: 0.5em;
+}
+
 
 .result{
   position: -webkit-sticky;
