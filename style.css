@@ -34,6 +34,12 @@ input{
   border-radius: 1em;
   bottom: 0;
   background: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.result > p{
+  margin: auto;
 }
 .categories {
     background-color: darkgreen;
