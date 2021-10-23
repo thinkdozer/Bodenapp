@@ -24,8 +24,8 @@
             </li>
             <li>
                 <p>Wiegen sie ihre Probe erneut. Der Verlust ist in etwa der Humusgehalt an der Probe. (1. Gewicht - 2. Gewicht) / 1. Gewicht = Humusanteil</p>
-                <label for="1. Gewicht">1. Gewicht:</label><input name="1. Gewicht" id="1. Gewicht">
-                <label for="2. Gewicht">2. Gewicht:</label><input name="2. Gewicht" id="2. Gewicht">
+                <label for="1. Gewicht">1. Gewicht:</label><input name="1. Gewicht" id="1. Gewicht" oninput="calculate()">
+                <label for="2. Gewicht">2. Gewicht:</label><input name="2. Gewicht" id="2. Gewicht" oninput="calculate()">
                 <div class="result">
                     <p id="result"></p>
                 </div>
@@ -33,7 +33,14 @@
         </ol>
         <script>
             function calculate(){
-                document.getElementById("result").innerHTML = Number()
+                console.log("calculate()");
+                let first = Number(document.getElementById("1. Gewicht").value);
+                console.log(first);
+                let second = Number(document.getElementById("2. Gewicht").value);
+                console.log(second);
+                let humus = Number((first - second) / first);
+                console.log("Humus: " + humus);
+                let output = Number(humus * 100) + "%";
             }
         </script>
 
