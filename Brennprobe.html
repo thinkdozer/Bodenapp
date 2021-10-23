@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body>
+    <body onclick="calculate()">
         <h1>Brennprobe</h1>
         <ol>
             <li>
@@ -24,8 +24,8 @@
             </li>
             <li>
                 <p>Wiegen sie ihre Probe erneut. Der Verlust ist in etwa der Humusgehalt an der Probe. (1. Gewicht - 2. Gewicht) / 1. Gewicht = Humusanteil</p>
-                <label for="1. Gewicht">1. Gewicht:</label><input name="1. Gewicht" id="1. Gewicht" oninput="calculate()">
-                <label for="2. Gewicht">2. Gewicht:</label><input name="2. Gewicht" id="2. Gewicht" oninput="calculate()">
+                <label for="1. Gewicht">1. Gewicht: </label><input name="1. Gewicht" id="1. Gewicht" oninput="calculate()">
+                <label for="2. Gewicht">2. Gewicht: </label><input name="2. Gewicht" id="2. Gewicht" oninput="calculate()">
                 <hr></hr>
                 <div class="result">
                     <p id="result"></p>
@@ -45,6 +45,7 @@
                 console.log("output: " + output);
                 document.getElementById("result").innerHTML = output;
             }
+            calculate();
         </script>
 
     </body>
