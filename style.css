@@ -1,12 +1,24 @@
 body {
   background: white;
   height: 100%;
+  font-size: 2em;
 }
 
 h1 {
     text-align: center;
+    font-size: 2em;
 }
-
+p {
+  font-size: 1em;
+}
+label {
+  font-size: 1em;
+}
+input{
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-size: 2em;
+}
 .clickbox:hover{
   alert("test");
 }
@@ -19,7 +31,7 @@ h1 {
   with: 50px;
   height: 50px;
   padding: 2%;
-  border-radius: 5px;
+  border-radius: 1em;
   bottom: 0;
   background: white;
 }
@@ -40,10 +52,14 @@ h1 {
 .boden{
   name: boden;
 }
-
 .standort{
   name: standort;
 }
+
+.grid-container{
+  display: grid;
+}
+
 @media (prefers-color-scheme: dark) {
   body{
     background: black;
