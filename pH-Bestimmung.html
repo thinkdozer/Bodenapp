@@ -47,7 +47,16 @@
           <p id="result">Ergebnis</p>
         </div>
         <script>
-
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker
+            .register('/service-worker.js')
+            .then((registration) => {
+              console.log(`Service Worker Registered at scope: ${registration.scope}`);
+            })
+            .catch((error) => {
+              console.error(`Service Worker failed registration: ${error}`);
+            })
+        }
         </script>
 
     </body>
