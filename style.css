@@ -28,6 +28,10 @@ input[type=radio]{
   width: 0.5em;
   height: 0.5em;
 }
+input[type=text]{
+  border-radius: 0.2em;
+  padding: 0.1em;
+}
 
 
 .result{
@@ -79,6 +83,10 @@ input[type=radio]{
     color: white;
   }
   .result{
+    background: black;
+  }
+  input{
+    color: white;
     background: black;
   }
 }
