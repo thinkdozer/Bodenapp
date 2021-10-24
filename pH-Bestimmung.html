@@ -6,6 +6,46 @@
     </head>
     <body>
         <h1>pH-Bestimmung</h1>
+        <div>
+        <p> Welche Bodenart liegt auf ihren Flächen vor? ?
+        <p>Wählen sie ihre Bodenart:</p>
+        <form class="boden">
+          <div onclick="check_box('boden::Sand')">
+              <input type="radio" id="boden::Sand" name="boden">
+              <label for="boden::Sand">schluffiger Sand</label>
+          </div>
+          <div onclick="check_box('boden::lehmSand')">
+              <input type="radio" id="boden::lehmSand" name="boden">
+              <label for="boden::lehmSand">lehmiger Sand / sandiger Schluff</label>
+          </div>
+          <div onclick="check_box('boden::Schluff')">
+              <input type="radio" id="boden::Schluff" name="boden">
+              <label for="boden::Schluff">sandiger Lehm / Schluff</label>
+          </div>
+          <div onclick="check_box('boden::schluffLehm')">
+              <input type="radio" id="boden::schluffLehm" name="boden">
+              <label for="boden::schluffLehm">lehmiger Schluff / Lehm / toniger Schluff</label>
+          </div>
+          <var><div onclick="check_box('boden::Lehm')">
+              <input type="radio" id="boden::Lehm" name="boden">
+              <label for="boden::Lehm">toniger Lehm / schluffiger Ton</label>
+          </div>
+          <var><div onclick="check_box('boden::liteTon')">
+              <input type="radio" id="boden::liteTon" name="boden">
+              <label for="boden::liteTon">lehmiger Ton / schluffiger Ton</label>
+          </div>
+          <var><div onclick="check_box('boden::Ton')">
+              <input type="radio" id="boden::Ton" name="boden">
+              <label for="boden::Ton">Ton</label>
+          </form>
+        </div>
+        <div class="box">
+        <label for="ph-wert">Geben sie den pH-Wert ihrer Fläche ein: </label>
+          <input type="text" name="ph-wert" id="ph-wert" class="small-input">
+        </div>
+        <div class="result">
+          <p id="result">Ergebnis</p>
+        </div>
         <script>
 
         </script>

@@ -37,6 +37,12 @@ input[type=text]{
 img {
   border-radius: 0.3em;
 }
+.small-input{
+  width: 2em;
+}
+.box{
+  display: block;
+}
 .result{
   position: -webkit-sticky;
   position: sticky;
