@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body onclick="calculate()">
+        <h1>Brennprobe</h1>
+        <ol>
+            <li>
+                <p>Nehmen sie eine Probe von ihrem Boden</p>
+                //img
+            </li>
+            <li>
+                <p>Erhitzen sie die Probe für eine Weile </p>
+                //img
+            </li>
+            <li>
+                <p>Wiegen sie ihre Probe</p>
+            </li>
+            <li>
+                <p>Verbrennen sie das organische Material in der Probe, dazu können sie einen Bunsenbrenner verwenden, aber auch gleichwertiges, wie etwa einen Unkrautverbrenner</p>
+                //img
+            </li>
+            <li>
+                <p>Wiegen sie ihre Probe erneut. Der Verlust ist in etwa der Humusgehalt an der Probe. (1. Gewicht - 2. Gewicht) / 1. Gewicht = Humusanteil</p>
+                <div class="grid-container">
+                  <label for="1. Gewicht">1. Gewicht: </label><input name="1. Gewicht" id="1. Gewicht" oninput="calculate()">
+                  <label for="2. Gewicht">2. Gewicht: </label><input name="2. Gewicht" id="2. Gewicht" oninput="calculate()">
+                </div>
+                <hr></hr>
+                <div class="result">
+                    <p id="result"></p>
+                </div>
+            </li>
+        </ol>
+        <script>
+            function calculate(){
+                console.log("calculate()");
+                let first = Number(document.getElementById("1. Gewicht").value);
+                console.log(first);
+                let second = Number(document.getElementById("2. Gewicht").value);
+                console.log(second);
+                let humus = Number((first - second) / first);
+                console.log("Humus: " + humus);
+                let output = Number(humus * 100) + "%";
+                console.log("output: " + output);
+                document.getElementById("result").innerHTML = output;
+            }
+            calculate();
+        </script>
+
+    </body>
+</html>

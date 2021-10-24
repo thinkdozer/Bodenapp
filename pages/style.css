@@ -1,0 +1,84 @@
+body {
+  background: white;
+  height: 100%;
+  font-size: 2em;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+}
+p {
+  font-size: 1em;
+}
+label {
+  font-size: 1em;
+}
+input{
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-size: 2em;
+}
+
+input[type=checkbox]{
+  width: 0.5em;
+  height: 0.5em;
+}
+input[type=radio]{
+  width: 0.5em;
+  height: 0.5em;
+}
+
+
+.result{
+  position: -webkit-sticky;
+  position: sticky;
+  border-color: green;
+  border-style: solid;;
+  with: 50px;
+  height: 50px;
+  padding: 2%;
+  border-radius: 1em;
+  bottom: 0;
+  background: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.result > p{
+  margin: auto;
+}
+.categories {
+    background-color: darkgreen;
+    width: 92%;
+    height: 16%;
+    padding: 2%;
+    margin: 2%;
+    border-radius: 20px;
+}
+.categories:hover{
+    background-color: green;
+}
+.indented1{
+  margin-left: 20px;
+}
+.boden{
+  name: boden;
+}
+.standort{
+  name: standort;
+}
+
+.grid-container{
+  display: grid;
+}
+
+@media (prefers-color-scheme: dark) {
+  body{
+    background: black;
+    color: white;
+  }
+  .result{
+    background: black;
+  }
+}

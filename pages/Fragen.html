@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body onclick="solve()">
+        <h1>Fragen</h1>
+        <h2>Bodenart</h2>
+        <p> Welche Bodenart liegt auf ihren Flächen vor? ? 
+        <p>Wählen sie ihre Bodenart:</p>
+        <form class="boden">
+          <div onclick="check_box('boden::Sand')">
+              <input type="radio" id="boden::Sand" name="boden">
+              <label for="boden::Sand">schluffiger Sand</label>
+          </div>
+          <div onclick="check_box('boden::lehmSand')">
+              <input type="radio" id="boden::lehmSand" name="boden">
+              <label for="boden::lehmSand">lehmiger Sand / sandiger Schluff</label>
+          </div>
+          <div onclick="check_box('boden::Schluff')">
+              <input type="radio" id="boden::Schluff" name="boden">
+              <label for="boden::Schluff">sandiger Lehm / Schluff</label>
+          </div>
+          <div onclick="check_box('boden::schluffLehm')">
+              <input type="radio" id="boden::schluffLehm" name="boden">
+              <label for="boden::schluffLehm">lehmiger Schluff / Lehm / toniger Schluff</label>
+          </div>
+          <var><div onclick="check_box('boden::Lehm')">
+              <input type="radio" id="boden::Lehm" name="boden">
+              <label for="boden::Lehm">toniger Lehm / schluffiger Ton</label>
+          </div>
+          <var><div onclick="check_box('boden::liteTon')">
+              <input type="radio" id="boden::liteTon" name="boden">
+              <label for="boden::liteTon">lehmiger Ton / schluffiger Ton</label>
+          </div>
+          <var><div onclick="check_box('boden::Ton')">
+              <input type="radio" id="boden::Ton" name="boden">
+              <label for="boden::Ton">Ton</label>
+          </form>
+        </div>
+          <h2>Standort</h2>
+            <p>Denken Sie an die letzten Jahre zurück: Wie ist der Niederschlag auf ihrem Standort im Vergleich zu anderen Regionen ausgefallen? Es war eher: </p>
+            <from class="standort">
+            <var><div onclick="check_box('Standort::Naß')">
+              <input type="radio" id="Standort::Naß" name="standort">
+              <label for="Standort::Naß">Naß</label>
+            </div>
+            <var><div onclick="check_box('Standort::Trocken')">
+              <input type="radio" id="Standort::Trocken" name="standort">
+              <label for="Standort::Trocken">Trocken</label>
+            </div>
+          </form>
+        <h2>Probe nehmen</h2>
+          <p>Nehmen sie von einem Acker. auf dem sie den Humusgehalt bestimmen wollen, eine Bodenprobe. Achten Sie bei der anschließenden Untersuchung auf folgende Punkte: </p>
+          <div class="indented1">
+          <h3>Geruchsprobe</h3>
+            <p>Erklärung</p>
+            <var class="clickbox"><div onclick="check_box('Geruch::modrich')">
+              <input type="radio" id="Geruch::modrich" name="geruch">
+              <label class="clickbox" for="Geruch::modrich">modrich / erdig</label>
+            </div>
+            </var>
+            <var><div onclick="check_box('Geruch::moorig')">
+              <input type="radio" id="Geruch::moorig" name="geruch">
+              <label for="Geruch::moorig">sauer / moorig</label>
+            </div>
+            </var>
+            <div onclick="check_box('Geruch::nichts')">
+                <input type="radio" id="Geruch::nichts" name="geruch">
+                <label for="Geruch::nichts">neutral</label>
+            </div>
+          <h3>Lebewesen</h3>
+            <p>Die Dichte und Anzahl von Lebewesen in Böden deutet darauf hin, wie viel Humus in einem Boden vorliegt. Diese sorgen für eine Auflockerung des Bodens und eine schnellere Zersetzung der Ernterückstände:  </p>
+            <var><div onclick="check_box('Lebewesen::Haufen')">
+              <input type="checkbox" id="Lebewesen::Haufen" name="lebewesen">
+              <label for="Lebewesen::Haufen">sehen sie Regenwurmhaufen</label>
+            </div>
+            <var><div onclick="check_box('Lebewesen::Gaenge')">
+              <input type="checkbox" id="Lebewesen::Gaenge" name="click me">
+              <label for="Lebewesen::Gaenge">sehen sie Gänge in der Probe</label>
+            </div>
+            </var>
+
+          <h3>Ernterückstände</h3>
+            <p>Erklärung</p>
+            <var><div onclick="check_box('Rückstände::vermodert')">
+              <input type="radio" id="Rückstände::vermodert" name="rückstände">
+              <label for="Rückstände::vermodert">sind Ernterückstände fast verschwunden</label>
+            </div>
+            </var>
+            <var><div onclick="check_box('Rückstände::ganz')">
+              <input type="radio" id="Rückstände::ganz" name="rückstände">
+              <label for="Rückstände::ganz">sind Ernterückstände noch vorhanden</label>
+            </div>
+            </var>
+          </div>
+        <h2>Fruchtfolge</h2>
+        <div>
+          <var><div onclick="check_box('Fruchtfolge::humuszehrer')">
+            <input type="radio" id="Fruchtfolge::humuszehrer" name="humuszehrer">
+            <label for="Fruchtfolge::humuszehrer">Haben sie viele Humuszehrer in ihrer Fruchtfolge?</label>
+          </div>
+          </var>
+          <var><div onclick="check_box('Fruchtfolge::humusgeber')">
+            <input type="radio" id="Fruchtfolge::humusgeber" name="humuszehrer">
+            <label for="Fruchtfolge::humusgeber">Haben sie viele Humusgeber in ihrer Fruchtfolge?</label>
+          </div>
+          </var>
+        </div>
+          <var><div onclick="check_box('Fruchtfolge::nebenprodukte')">
+            <input type="checkbox" id="Fruchtfolge::nebenprodukte" name="click me">
+            <label for="Fruchtfolge::nebenprodukte">Fahren sie Nebenprodukte ab?</label>
+          </div>
+          </var>
+          <var><div onclick="check_box('Fruchtfolge::zwischenfrüchte')">
+            <input type="checkbox" id="Fruchtfolge::zwischenfrüchte" name="click me">
+            <label for="Fruchtfolge::zwischenfrüchte">Bauen sie Zwischenfrüchte an?</label>
+          </div>
+          </var>
+          <var><div onclick="check_box('Fruchtfolge::pfluglos')">
+            <input type="checkbox" id="Fruchtfolge::pfluglos" name="click me">
+            <label for="Fruchtfolge::pfluglos">Reduzieren sie Arbeiten mit dem Pflug?</label>
+          </div>
+          </var>
+          <var><div onclick="check_box('Fruchtfolge::organik')">
+            <input type="checkbox" id="Fruchtfolge::organik" name="click me">
+            <label for="Fruchtfolge::organik">Bringen sie organischen Dünger aus?</label>
+          </div>
+          </var>
+          <var><div onclick="check_box('Fruchtfolge::legominosen')">
+            <input type="checkbox" id="Fruchtfolge::legominosen" name="click me">
+            <label for="Fruchtfolge::legominosen">Bauen sie Legominosen an?</label>
+          </div>
+          </var>
+        <h2>Nährstoffspeicherfähigkeit</h2>
+          <var><div onclick="check_box('Nährstoffe::dünger_gut')">
+            <input type="radio" id="Nährstoffe::dünger_gut" name="dünger">
+            <label for="Nährstoffe::dünger_gut">Zeigt Dünger eine gute Wirkung?</label>
+          </div>
+          </var>
+          <var><div onclick="check_box('Nährstoffe::dünger_schlecht')">
+            <input type="radio" id="Nährstoffe::dünger_schlecht" name="dünger">
+            <label for="Nährstoffe::dünger_schlecht">Zeigt Dünger nur eine mäßige Wirkung?</label>
+          </div>
+          </var>
+          <var><div onclick="check_box('Nährstoffe::vergleichbar')">
+            <input type="checkbox" id="Nährstoffe::vergleichbar" name="click me">
+            <label for="Nährstoffe::vergleichbar">Sind ihre Erträge vergleichbar mit Feldnachbarn?</label>
+          </div>
+          </var>
+          <hr></hr>
+        <h2>Wasserspeicherfähigkeit</h2>
+        <div class="result">
+          <p id="result"><p>
+        </div>
+        <script src="values.js"></script>
+        <script>
+        const elements = ["boden::Sand", "boden::lehmSand", "boden::Schluff", "boden::schluffLehm", "boden::Lehm", "boden::liteTon", "boden::Ton"];
+        function unset(exeption) {
+          console.log("unset(" + exeption + ")");
+          for (let i = 0; i < elements.length; i++) {
+            let element = elements[i];
+            if (!(element == exeption)) {
+              document.getElementById(element).checked = false;
+            }
+          }
+          }
+
+          function unset_all() {
+          console.log("unset_all()");
+          for (let i = 0; i < elements.length; i++) {
+            let element = elements[i];
+            document.getElementById(element).checked = false;
+          }
+          }
+          /*
+          function unset_all(){
+            console.log("unset_all()");
+            document.getElementsByTagName("checkbox").checked = false;
+            document.getElementsByTagName("radio").checked = false;
+          }
+          */
+
+          function check_box(exeption){
+            /*
+            console.log("check_box(" + exeption + ")");
+          switch (exeption) {
+              case 'boden::Sand':
+                boden = 20;
+                break;
+              case 'boden::lehmSand':
+                boden = 21;
+                break;
+              case 'boden::Schluff':
+                boden = 22;
+                break;
+              case 'boden::schluffLehm':
+                boden = 23;
+                break;
+              case 'boden::Lehm':
+                boden = 24;
+                break;
+              case 'boden::liteTon':
+                boden = 25;
+                break;
+              case 'boden::Ton':
+                boden = 26;
+                break;
+
+            }
+            unset(exeption);
+            let result = boden;
+            document.getElementById("result").innerHTML = result;
+            */
+          }
+          function extr_radio(obj){
+            console.log("extr_radio(" + obj + ")");
+            for (const i in obj.boden){
+              let name = `${i}`;
+            //console.log(`${i}`);
+            //console.log(document.getElementById(`${i}`).checked);
+              if (document.getElementById(`${i}`).checked){
+                let boden = obj.boden[name];
+                return(boden);
+              }
+            }
+          }
+          function extr_radio_2(obj, hum){
+            console.log("extr_radio_2(" + obj + ")");
+            console.log(obj);
+            console.log("obj.calculation = " + obj.calculation);
+            let assigns = obj.assigns;
+            console.log("assigns: ");
+            console.log(assigns);
+            for (const i in assigns){
+              let name = `${i}`;
+              console.log(`${i}` + ": " + document.getElementById(`${i}`).checked);
+              if (document.getElementById(`${i}`).checked){
+                var boden = assigns[name];
+                console.log("set boden to: " + boden);
+              }
+
+            }
+            if (boden == undefined) {
+              boden = obj.fallback;
+            }
+            if (obj.calculation == "overwrite") {
+              console.log("extr_radio_2(): overwrite hum");
+              hum = boden;
+            }else if (obj.calculation == "addition") {
+              console.log("added boden: " + boden + "to hum: " + hum);
+              hum = Number(hum) + Number(boden);
+            }
+            return(hum);
+          }
+          function extr_checkbox(obj, hum){
+            console.log("extr_checkbox(" + obj + ")");
+            console.log(obj);
+            console.log("obj.calculation = " + obj.calculation);
+            let assigns = obj.assigns;
+            console.log("assigns: ");
+            console.log(assigns);
+            for (const i in assigns){
+              let name = `${i}`;
+              if (document.getElementById(`${i}`).checked) {
+                var part_hum = assigns[name];
+                if (obj.calculation == "addition") {
+                  hum = Number(hum) + Number(part_hum);
+                }else if (obj.calculation == "overwrite") {
+                  hum = Number(part_hum);
+                } else{
+                  console.log("Err: no calculation type in " + obj);
+                }
+              }
+            }
+            return(hum);
+          }
+          function solve(){
+            console.log("solve()");
+            let obj = getvalues();
+            var hum = 10;
+            for (const i in obj){
+              let div = `${i}`;
+              console.log("type: " + obj[div].type);
+              if (obj[div].type == "radio") {
+                  console.log("solve(): radio");
+                  hum = extr_radio_2(obj[div], hum);
+                  /*
+                  if (obj[div].calculation == "overwrite") {
+                    hum = part_hum;
+                    console.log("solve(): overwritten hum to " + hum);
+                  }if (obj[div].calculation == "addition") {
+                    console.log("addition would be: " + hum + " + " + part_hum);
+                    hum = Number(hum) + Number(part_hum);
+                    console.log("solve(): added to hum hum = " + hum);
+                  }
+                  */
+              }else if (obj[div].type == "checkbox") {
+                hum = extr_checkbox(obj[div], hum);
+              } else {
+                console.log("Err: wrong type in " + obj[div]);
+                break;
+              }
+/*
+              if (part_hum == undefined) {
+                var part_hum = obj[div].fallback;
+              }
+              console.log(div + ": " + part_hum);
+              if (obj[div].calculation == "overwrite") {
+                hum = part_hum;
+                console.log("solve(): overwritten hum to " + hum);
+              }if (obj[div].calculation == "addition") {
+                console.log("addition would be: " + hum + " + " + part_hum);
+                hum = Number(hum) + Number(part_hum);
+                console.log("solve(): added to hum hum = " + hum);
+              }
+              /*
+              var dynamicname = div;
+              window[dynamicname] = part_hum;
+              */
+              console.log(" hum = " + hum);
+            }
+            //let hum = boden;
+            console.log("solve(): hum = " + hum);
+            document.getElementById("result").innerHTML = hum;
+          }
+          function calculate(){
+            let test = getvalues();
+            if (extr_radio(test) != undefined) {
+              var boden = extr_radio(test);
+            }else {
+              var boden = 10;
+            }
+            console.log("boden: " + boden);
+            let result = boden;
+            document.getElementById("result").innerHTML = result;
+          }
+          unset_all();
+
+        </script>
+        <script>
+        /*
+          var dynamicname = 'name1_';
+          window[dynamicname] = 'myvalue';
+          console.log(name1_);
+          */
+        </script>
+
+    </body>
+</html>
