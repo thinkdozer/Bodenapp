@@ -1,0 +1,31 @@
+{
+  "name": "Bodenapp",
+  "short_name": "Bodenapp",
+  "start_url": "index.html",
+  "display": "standalone",
+  "description": "Helps to guess the amount of humus in your soil.",
+  "background_color": "black",
+  "orientation": "portrait-primary",
+  "theme_color": "green",
+  "icons": [
+    {
+      "src": "logos/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+
+    },
+    {
+      "src": "logos/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "logos/manifest-icon-144.maskable.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

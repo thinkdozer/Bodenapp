@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body onclick="solve()">
         <h1>Fragen</h1>
         <h2>Bodenart</h2>
-        <p> Welche Bodenart liegt auf ihren Flächen vor? ? 
+        <p> Welche Bodenart liegt auf ihren Flächen vor? ?
         <p>Wählen sie ihre Bodenart:</p>
         <form class="boden">
           <div onclick="check_box('boden::Sand')">
@@ -149,8 +149,21 @@
             <label for="Nährstoffe::vergleichbar">Sind ihre Erträge vergleichbar mit Feldnachbarn?</label>
           </div>
           </var>
-          <hr></hr>
         <h2>Wasserspeicherfähigkeit</h2>
+          <div>
+            <input type="radio" id="Wasserspeicherfähigkeit::schnell" name="dränend">
+            <label for="Wasserspeicherfähigkeit::schnell">Verschwindet Wasser schnell im Boden und ist die Erden nach Regenperioden trotzdem trocken?</label>
+          </div>
+          <div>
+            <input type="radio" id="Wasserspeicherfähigkeit::langsam" name="dränend">
+            <label for="Wasserspeicherfähigkeit::langsam">Bleibt Wasser nach Regen noch lange im Boden?</label>
+          </div>
+          <div>
+            <input type="checkbox" id="Wasserspeicherfähigkeit::trockenperioden">
+            <label for="Wasserspeicherfähigkeit::trockenperioden">Haben sie auch in Trockenperioden gute Erträge?</label>
+          </div>
+        <hr></hr>
+        <h2>Humusgehalt</h2>
         <div class="result">
           <p id="result"><p>
         </div>
@@ -340,11 +353,16 @@
 
         </script>
         <script>
-        /*
-          var dynamicname = 'name1_';
-          window[dynamicname] = 'myvalue';
-          console.log(name1_);
-          */
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+              .register('/service-worker.js')
+              .then((registration) => {
+                console.log(`Service Worker Registered at scope: ${registration.scope}`);
+              })
+              .catch((error) => {
+                console.error(`Service Worker failed registration: ${error}`);
+              })
+          }
         </script>
 
     </body>
