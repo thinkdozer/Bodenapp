@@ -9,7 +9,43 @@ var myCache = [
   "./Probenahme.jpg",
   "./serviceworker.js",
   "./style.css",
-  "./values.js"
+  "./values.js",
+  Brennprobe.html
+browser.png
+dirs
+docs
+download.png
+example.png
+filemanager.jpg
+Fragen.html
+index.html
+pH-Bestimmung.html
+Probenahme.jpg
+README.md
+serviceworker.js
+style.css
+values.js
+values.json
+Brennprobe.html
+browser.png
+dirs
+docs
+download.png
+example.png
+filemanager.jpg
+Fragen.html
+index.html
+logos
+manifest.json
+michelsenlogo.jpg
+pH-Bestimmung.html
+Probenahme.jpg
+README.md
+serviceworker.js
+style.css
+values.js
+values.json
+
 ];
 
 self.addEventListener("install", (event) => {

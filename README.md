@@ -1,7 +1,7 @@
 # Bodenapp
 The *Bodenapp* helps to guess the amount of humus in the soil by answering some questions
 
-![example](example.png)
+![example](./readme/example.png)
 
 ## plans
 
