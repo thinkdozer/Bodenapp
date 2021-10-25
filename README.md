@@ -15,15 +15,15 @@ The *Bodenapp* helps to guess the amount of humus in the soil by answering some 
 
 1. Download zip and extract it
 
-![zip download](download.png)
+![zip download](./readme/download.png)
 
-2. open file broswer by inserting *file://path/to/file/Bodenapp.html* into adress bar
+2. open file broswer by inserting *file:///path/to/file/Bodenapp.html* into adress bar
 
-![opening in the browser](browser.png)
+![opening in the browser](./readme/browser.png)
 
 or open it in file manager:
 
-![open in file manager](filemanager.jpg)
+![open in file manager](./readme/filemanager.jpg)
 
 ### Advanced
 
