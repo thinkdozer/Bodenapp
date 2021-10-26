@@ -190,11 +190,11 @@
           */
           function unset_all(){
             console.log("unset_all()");
-            let obj = getvalues("amount");
+            let obj = getvalues("all");
             for (let theme in obj){
               let assigns = obj[theme].assigns;
               for (let id in assigns) {
-                console.log(" " + id);
+                //console.log(" id: " + id);
                 document.getElementById(id).checked = false;
               }
             }
@@ -342,7 +342,15 @@
             }
             //let hum = boden;
             console.log("solve(): hum = " + hum);
-            document.getElementById("result").innerHTML = hum;
+            document.getElementById("result").innerHTML = hum + "%";
+            let type = getvalues("type");
+            for (var geruchsort in type["geruch"].assigns){
+              if (document.getElementById(geruchsort).checked) {
+                var geruchszuordnung = type["geruch"].assigns[geruchsort];
+                document.getElementById("result").innerHTML = document.getElementById("result").innerHTML + ", wo von ein großer Anteil " + geruchszuordnung + " ist.";
+              }
+            }
+            console.log(" geruchszuordnung: " + geruchszuordnung);
           }
           function calculate(){
             let test = getvalues("amount");
@@ -356,7 +364,6 @@
             document.getElementById("result").innerHTML = result;
           }
           unset_all();
-
         </script>
         <script>
           if ('serviceWorker' in navigator) {

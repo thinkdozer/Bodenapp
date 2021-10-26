@@ -1,5 +1,5 @@
 function getvalues(set){
-let x = {
+const x = {
     "boden": {
       "type": "radio",
       "fallback": "10",
@@ -97,7 +97,24 @@ let x = {
       }
     }
   };
+const y = {
+  "geruch":{
+    "type": "radio",
+    "assigns":{
+      "Geruch::modrich": "Moderhumus",
+      "Geruch::moorig": "Rohhumus",
+      "Geruch::nichts": "Mullhumus"
+    }
+  }
+  };
   if (set == "amount") {
     return x;
+  } else if (set == "type") {
+    return y;
+  } else if (set == "all"){
+    let z = Object.assign(x, y);
+    return z;
+  } else {
+    console.log(" Err: no type given")
   }
 }
