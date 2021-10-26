@@ -98,14 +98,14 @@ const x = {
     }
   };
 const y = {
-  "geruch":{
-    "type": "radio",
-    "assigns":{
-      "Geruch::modrich": "Moderhumus",
-      "Geruch::moorig": "Rohhumus",
-      "Geruch::nichts": "Mullhumus"
+    "geruch":{
+      "type": "radio",
+      "assigns":{
+        "Geruch::modrich": "Moderhumus",
+        "Geruch::moorig": "Rohhumus",
+        "Geruch::nichts": "Mullhumus"
+      }
     }
-  }
   };
   if (set == "amount") {
     return x;
