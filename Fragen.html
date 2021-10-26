@@ -291,7 +291,7 @@
           }
           function solve(){
             console.log("solve()");
-            let obj = getvalues();
+            let obj = getvalues("amount");
             var hum = 10;
             for (const i in obj){
               let div = `${i}`;
@@ -339,7 +339,7 @@
             document.getElementById("result").innerHTML = hum;
           }
           function calculate(){
-            let test = getvalues();
+            let test = getvalues("amount");
             if (extr_radio(test) != undefined) {
               var boden = extr_radio(test);
             }else {

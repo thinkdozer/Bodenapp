@@ -1,4 +1,4 @@
-function getvalues(){
+function getvalues(set){
 let x = {
     "boden": {
       "type": "radio",
@@ -68,10 +68,36 @@ let x = {
       "calculation": "addition",
       "assigns":{
         "Nährstoffe::dünger_gut": "3",
-        "Nährstoffe::dünger_schlecht": "-3",
-        "Nährstoffe::vergleichbar": "3"
+        "Nährstoffe::dünger_schlecht": "-3"
+      }
+    },
+    "nährstoffe::vergleichbar":{
+      "type": "checkbox",
+      "fallback": "0",
+      "calculation": "addition",
+      "assigns":{
+        "Nährstoffe::vergleichbar": "3",
+      }
+    },
+    "wasser":{
+      "type": "radio",
+      "fallback": "0",
+      "calculation": "addition",
+      "assigns":{
+        "Wasserspeicherfähigkeit::schnell": "-3",
+        "Wasserspeicherfähigkeit::langsam": "3",
+      }
+    },
+    "wasser::trockenperioden":{
+      "type": "checkbox",
+      "fallback": "0",
+      "calculation": "addition",
+      "assigns":{
+        "Wasserspeicherfähigkeit::trockenperioden": "3",
       }
     }
   };
-return x;
+  if (set == "amount") {
+    return x;
+  }
 }
