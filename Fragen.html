@@ -7,8 +7,7 @@
     <body onclick="solve()">
         <h1>Fragen</h1>
         <h2>Bodenart</h2>
-        <p> Welche Bodenart liegt auf ihren Flächen vor? ?
-        <p>Wählen sie ihre Bodenart:</p>
+        <p>Welche Bodenart liegt auf ihren Flächen vor? <br> Wählen sie ihre Bodenart:</p>
         <form class="boden">
           <div onclick="check_box('boden::Sand')">
               <input type="radio" id="boden::Sand" name="boden">
@@ -40,7 +39,7 @@
           </form>
         </div>
           <h2>Standort</h2>
-            <p>Denken Sie an die letzten Jahre zurück: Wie ist der Niederschlag auf ihrem Standort im Vergleich zu anderen Regionen ausgefallen? Es war eher: </p>
+            <p>Denken Sie an die letzten Jahre zurück: Wie ist der Niederschlag auf ihrem Standort im Vergleich zu anderen Regionen ausgefallen? <br>Es war eher: </p>
             <from class="standort">
             <var><div onclick="check_box('Standort::Naß')">
               <input type="radio" id="Standort::Naß" name="standort">
@@ -55,7 +54,7 @@
           <p>Nehmen sie von einem Acker. auf dem sie den Humusgehalt bestimmen wollen, eine Bodenprobe. Achten Sie bei der anschließenden Untersuchung auf folgende Punkte: </p>
           <div class="indented1">
           <h3>Geruchsprobe</h3>
-            <p>Erklärung</p>
+            <p>Zu welchen der folgenden Kategorien lässt sich der Geruch ihrer Probe am ehesten zuordnen?</p>
             <var class="clickbox"><div onclick="check_box('Geruch::modrich')">
               <input type="radio" id="Geruch::modrich" name="geruch">
               <label class="clickbox" for="Geruch::modrich">modrich / erdig</label>
@@ -83,7 +82,7 @@
             </var>
 
           <h3>Ernterückstände</h3>
-            <p>Erklärung</p>
+            <p>Betrachten sie ihre Probe genau. <br>Wie sehen Ernterückstände in der Erde aus?</p>
             <var><div onclick="check_box('Rückstände::vermodert')">
               <input type="radio" id="Rückstände::vermodert" name="rückstände">
               <label for="Rückstände::vermodert">sind Ernterückstände fast verschwunden</label>
