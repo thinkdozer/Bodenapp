@@ -61,7 +61,22 @@ self.addEventListener("fetch", fetchEvent => {
   )
 })
 
-
+self.addEventListener("activate", (event) => {
+  var cacheWhitelist = [cacheName];
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          // if our cache is out of date, delete it!
+          // just update the name of your cache to triger this update
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
 /*
 self.addEventListener("install", (event) => {
   event.waitUntil(
