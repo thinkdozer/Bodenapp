@@ -4,48 +4,96 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body>
+    <body onclick="solve()">
         <h1>pH-Bestimmung</h1>
         <div>
         <p> Welche Bodenart liegt auf ihren Flächen vor? ?
         <p>Wählen sie ihre Bodenart:</p>
         <form class="boden">
-          <div onclick="check_box('boden::Sand')">
+          <div>
               <input type="radio" id="boden::Sand" name="boden">
               <label for="boden::Sand">schluffiger Sand</label>
           </div>
-          <div onclick="check_box('boden::lehmSand')">
+          <div>
               <input type="radio" id="boden::lehmSand" name="boden">
               <label for="boden::lehmSand">lehmiger Sand / sandiger Schluff</label>
           </div>
-          <div onclick="check_box('boden::Schluff')">
+          <div>
               <input type="radio" id="boden::Schluff" name="boden">
               <label for="boden::Schluff">sandiger Lehm / Schluff</label>
           </div>
-          <div onclick="check_box('boden::schluffLehm')">
+          <div>
               <input type="radio" id="boden::schluffLehm" name="boden">
               <label for="boden::schluffLehm">lehmiger Schluff / Lehm / toniger Schluff</label>
           </div>
-          <var><div onclick="check_box('boden::Lehm')">
+          <div>
               <input type="radio" id="boden::Lehm" name="boden">
               <label for="boden::Lehm">toniger Lehm / schluffiger Ton</label>
           </div>
-          <var><div onclick="check_box('boden::liteTon')">
+          <div>
               <input type="radio" id="boden::liteTon" name="boden">
               <label for="boden::liteTon">lehmiger Ton / schluffiger Ton</label>
           </div>
-          <var><div onclick="check_box('boden::Ton')">
+          <div>
               <input type="radio" id="boden::Ton" name="boden">
               <label for="boden::Ton">Ton</label>
           </form>
         </div>
+        <p></p>
         <div class="box">
         <label for="ph-wert">Geben sie den pH-Wert ihrer Fläche ein: </label>
-          <input type="text" name="ph-wert" id="ph-wert" class="small-input">
+          <input type="number" name="ph-wert" oninput="solve()" id="ph-wert" style="height: auto;" min="0" max="10" step="0.1" placeholder="ph-wert">
         </div>
         <div class="result">
           <p id="result">Ergebnis</p>
         </div>
+        <script>
+          let obj = {"boden::Sand": {"7": "10", "8": "20"}, "boden::lehmSand":{"7": "40", "8": "50"}};
+          let uobj = obj["boden::Sand"];
+          console.log("uobj: ");
+          console.log(uobj);
+          function test(){
+            for (const i in obj) {
+              console.log(document.getElementById(i).checked);
+              if (document.getElementById(i).checked) {
+                console.log("i: ");
+                console.log(i);
+                let boden = obj[i];
+                for (let j in boden){
+                  console.log("j: " + j);
+                  if (document.getElementById("ph-wert").value == j){
+                    console.log("hum: " + boden[j]);
+                  }
+                }
+              }  
+            }
+          }
+          function calculate(type, ph){
+            /*
+            for (let i in obj){
+              if (document.getElementById(i).checked){
+                for (let j in obj[i]){
+                  if (document.getElementById("ph-wert").value = j) {
+                    console.log("hum: " + obj[i].j);
+                  }
+                }
+              }
+            }
+            */
+            return Number(ph);
+          }
+          function solve(){
+            test();
+            document.getElementById("result").innerHTML = calculate("boden::liteTon", document.getElementById("ph-wert").value);
+          }
+          document.getElementById("ph-wert").value = 7;
+          let radios = document.getElementsByName("boden");
+          for (let i = 0; i < radios.length; i++) {
+            radios[i].checked = false;
+            
+          }
+          solve();
+        </script>
         <script>
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker
