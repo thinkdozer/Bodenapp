@@ -169,6 +169,25 @@
         <p>*dies ist aber nur eine grobe Schätzung basierend auf ihren Angaben, um einen genaueren Wert zu ermitteln wenden sie bitte die Brennprobe oder die pH-Bestimmung an</p>
         <script src="values.js"></script>
         <script>
+        const elements = ["boden::Sand", "boden::lehmSand", "boden::Schluff", "boden::schluffLehm", "boden::Lehm", "boden::liteTon", "boden::Ton"];
+        function unset(exeption) {
+          console.log("unset(" + exeption + ")");
+          for (let i = 0; i < elements.length; i++) {
+            let element = elements[i];
+            if (!(element == exeption)) {
+              document.getElementById(element).checked = false;
+            }
+          }
+          }
+          /*
+          function unset_all() {
+          console.log("unset_all()");
+          for (let i = 0; i < elements.length; i++) {
+            let element = elements[i];
+            document.getElementById(element).checked = false;
+          }
+          }
+          */
           function unset_all(){
             console.log("unset_all()");
             let obj = getvalues("all");
@@ -182,6 +201,51 @@
           }
 
 
+          function check_box(exeption){
+            /*
+            console.log("check_box(" + exeption + ")");
+          switch (exeption) {
+              case 'boden::Sand':
+                boden = 20;
+                break;
+              case 'boden::lehmSand':
+                boden = 21;
+                break;
+              case 'boden::Schluff':
+                boden = 22;
+                break;
+              case 'boden::schluffLehm':
+                boden = 23;
+                break;
+              case 'boden::Lehm':
+                boden = 24;
+                break;
+              case 'boden::liteTon':
+                boden = 25;
+                break;
+              case 'boden::Ton':
+                boden = 26;
+                break;
+
+            }
+            unset(exeption);
+            let result = boden;
+            document.getElementById("result").innerHTML = result;
+            */
+          }
+          function extr_radio(obj){
+            console.log("extr_radio(" + obj + ")");
+            for (const i in obj.boden){
+              let name = `${i}`;
+            //console.log(`${i}`);
+            //console.log(document.getElementById(`${i}`).checked);
+              if (document.getElementById(`${i}`).checked){
+                let boden = obj.boden[name];
+                return(boden);
+              }
+            }
+
+          }
           function extr_radio_2(obj, hum){
             console.log("extr_radio_2(" + obj + ")");
             console.log(obj);
@@ -242,14 +306,42 @@
               if (obj[div].type == "radio") {
                   console.log("solve(): radio");
                   hum = extr_radio_2(obj[div], hum);
+                  /*
+                  if (obj[div].calculation == "overwrite") {
+                    hum = part_hum;
+                    console.log("solve(): overwritten hum to " + hum);
+                  }if (obj[div].calculation == "addition") {
+                    console.log("addition would be: " + hum + " + " + part_hum);
+                    hum = Number(hum) + Number(part_hum);
+                    console.log("solve(): added to hum hum = " + hum);
+                  }
+                  */
               }else if (obj[div].type == "checkbox") {
                 hum = extr_checkbox(obj[div], hum);
               } else {
                 console.log("Err: wrong type in " + obj[div]);
                 break;
               }
+/*
+              if (part_hum == undefined) {
+                var part_hum = obj[div].fallback;
+              }
+              console.log(div + ": " + part_hum);
+              if (obj[div].calculation == "overwrite") {
+                hum = part_hum;
+                console.log("solve(): overwritten hum to " + hum);
+              }if (obj[div].calculation == "addition") {
+                console.log("addition would be: " + hum + " + " + part_hum);
+                hum = Number(hum) + Number(part_hum);
+                console.log("solve(): added to hum hum = " + hum);
+              }
+              /*
+              var dynamicname = div;
+              window[dynamicname] = part_hum;
+              */
               console.log(" hum = " + hum);
             }
+            //let hum = boden;
             console.log("solve(): hum = " + hum);
             document.getElementById("result").innerHTML = hum + "%";
             let type = getvalues("type");
@@ -261,8 +353,18 @@
             }
             console.log(" geruchszuordnung: " + geruchszuordnung);
           }
+          function calculate(){
+            let test = getvalues("amount");
+            if (extr_radio(test) != undefined) {
+              var boden = extr_radio(test);
+            }else {
+              var boden = 10;
+            }
+            console.log("boden: " + boden);
+            let result = boden;
+            document.getElementById("result").innerHTML = result;
+          }
           unset_all();
-          solve();
         </script>
         <script>
           if ('serviceWorker' in navigator) {
