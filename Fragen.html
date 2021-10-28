@@ -9,31 +9,31 @@
         <h2>Bodenart</h2>
         <p>Welche Bodenart liegt auf ihren Flächen vor? <br> Wählen sie ihre Bodenart:</p>
         <form class="boden">
-          <div onclick="check_box('boden::Sand')">
+          <div>
               <input type="radio" id="boden::Sand" name="boden">
               <label for="boden::Sand">schluffiger Sand</label>
           </div>
-          <div onclick="check_box('boden::lehmSand')">
+          <div>
               <input type="radio" id="boden::lehmSand" name="boden">
               <label for="boden::lehmSand">lehmiger Sand / sandiger Schluff</label>
           </div>
-          <div onclick="check_box('boden::Schluff')">
+          <div>
               <input type="radio" id="boden::Schluff" name="boden">
               <label for="boden::Schluff">sandiger Lehm / Schluff</label>
           </div>
-          <div onclick="check_box('boden::schluffLehm')">
+          <div>
               <input type="radio" id="boden::schluffLehm" name="boden">
               <label for="boden::schluffLehm">lehmiger Schluff / Lehm / toniger Schluff</label>
           </div>
-          <var><div onclick="check_box('boden::Lehm')">
+          <div>
               <input type="radio" id="boden::Lehm" name="boden">
               <label for="boden::Lehm">toniger Lehm / schluffiger Ton</label>
           </div>
-          <var><div onclick="check_box('boden::liteTon')">
+          <div>
               <input type="radio" id="boden::liteTon" name="boden">
               <label for="boden::liteTon">lehmiger Ton / schluffiger Ton</label>
           </div>
-          <var><div onclick="check_box('boden::Ton')">
+          <div>
               <input type="radio" id="boden::Ton" name="boden">
               <label for="boden::Ton">Ton</label>
           </form>
@@ -41,11 +41,11 @@
           <h2>Standort</h2>
             <p>Denken Sie an die letzten Jahre zurück: Wie ist der Niederschlag auf ihrem Standort im Vergleich zu anderen Regionen ausgefallen? <br>Es war eher: </p>
             <from class="standort">
-            <var><div onclick="check_box('Standort::Naß')">
+            <div>
               <input type="radio" id="Standort::Naß" name="standort">
               <label for="Standort::Naß">Naß</label>
             </div>
-            <var><div onclick="check_box('Standort::Trocken')">
+            <div>
               <input type="radio" id="Standort::Trocken" name="standort">
               <label for="Standort::Trocken">Trocken</label>
             </div>
@@ -55,99 +55,83 @@
           <div class="indented1">
           <h3>Geruchsprobe</h3>
             <p>Zu welchen der folgenden Kategorien lässt sich der Geruch ihrer Probe am ehesten zuordnen?</p>
-            <var class="clickbox"><div onclick="check_box('Geruch::modrich')">
+            <div>
               <input type="radio" id="Geruch::modrich" name="geruch">
               <label class="clickbox" for="Geruch::modrich">modrich / erdig</label>
             </div>
-            </var>
-            <var><div onclick="check_box('Geruch::moorig')">
+            <div>
               <input type="radio" id="Geruch::moorig" name="geruch">
               <label for="Geruch::moorig">sauer / moorig</label>
             </div>
-            </var>
-            <div onclick="check_box('Geruch::nichts')">
+            <div>
                 <input type="radio" id="Geruch::nichts" name="geruch">
                 <label for="Geruch::nichts">neutral</label>
             </div>
           <h3>Lebewesen</h3>
             <p>Die Dichte und Anzahl von Lebewesen in Böden deutet darauf hin, wie viel Humus in einem Boden vorliegt. Diese sorgen für eine Auflockerung des Bodens und eine schnellere Zersetzung der Ernterückstände:  </p>
-            <var><div onclick="check_box('Lebewesen::Haufen')">
+            <div>
               <input type="checkbox" id="Lebewesen::Haufen" name="lebewesen">
               <label for="Lebewesen::Haufen">sehen sie Regenwurmhaufen</label>
             </div>
-            <var><div onclick="check_box('Lebewesen::Gaenge')">
+            <div>
               <input type="checkbox" id="Lebewesen::Gaenge" name="click me">
               <label for="Lebewesen::Gaenge">sehen sie Gänge in der Probe</label>
             </div>
-            </var>
 
           <h3>Ernterückstände</h3>
             <p>Betrachten sie ihre Probe genau. <br>Wie sehen Ernterückstände in der Erde aus?</p>
-            <var><div onclick="check_box('Rückstände::vermodert')">
+            <div>
               <input type="radio" id="Rückstände::vermodert" name="rückstände">
               <label for="Rückstände::vermodert">sind Ernterückstände fast verschwunden</label>
             </div>
-            </var>
-            <var><div onclick="check_box('Rückstände::ganz')">
+            <div>
               <input type="radio" id="Rückstände::ganz" name="rückstände">
               <label for="Rückstände::ganz">sind Ernterückstände noch vorhanden</label>
             </div>
-            </var>
-          </div>
         <h2>Fruchtfolge</h2>
         <div>
-          <var><div onclick="check_box('Fruchtfolge::humuszehrer')">
+          <div>
             <input type="radio" id="Fruchtfolge::humuszehrer" name="humuszehrer">
             <label for="Fruchtfolge::humuszehrer">Haben sie viele Humuszehrer in ihrer Fruchtfolge?</label>
           </div>
-          </var>
-          <var><div onclick="check_box('Fruchtfolge::humusgeber')">
+          <div>
             <input type="radio" id="Fruchtfolge::humusgeber" name="humuszehrer">
             <label for="Fruchtfolge::humusgeber">Haben sie viele Humusgeber in ihrer Fruchtfolge?</label>
           </div>
-          </var>
         </div>
-          <var><div onclick="check_box('Fruchtfolge::nebenprodukte')">
+          <div>
             <input type="checkbox" id="Fruchtfolge::nebenprodukte" name="click me">
             <label for="Fruchtfolge::nebenprodukte">Fahren sie Nebenprodukte ab?</label>
           </div>
-          </var>
-          <var><div onclick="check_box('Fruchtfolge::zwischenfrüchte')">
+          <div>
             <input type="checkbox" id="Fruchtfolge::zwischenfrüchte" name="click me">
             <label for="Fruchtfolge::zwischenfrüchte">Bauen sie Zwischenfrüchte an?</label>
           </div>
-          </var>
-          <var><div onclick="check_box('Fruchtfolge::pfluglos')">
+          <div>
             <input type="checkbox" id="Fruchtfolge::pfluglos" name="click me">
             <label for="Fruchtfolge::pfluglos">Reduzieren sie Arbeiten mit dem Pflug?</label>
           </div>
-          </var>
-          <var><div onclick="check_box('Fruchtfolge::organik')">
+          <div>
             <input type="checkbox" id="Fruchtfolge::organik" name="click me">
             <label for="Fruchtfolge::organik">Bringen sie organischen Dünger aus?</label>
           </div>
-          </var>
-          <var><div onclick="check_box('Fruchtfolge::legominosen')">
+          <div>
             <input type="checkbox" id="Fruchtfolge::legominosen" name="click me">
             <label for="Fruchtfolge::legominosen">Bauen sie Legominosen an?</label>
           </div>
-          </var>
         <h2>Nährstoffspeicherfähigkeit</h2>
-          <var><div onclick="check_box('Nährstoffe::dünger_gut')">
+          <div>
             <input type="radio" id="Nährstoffe::dünger_gut" name="dünger">
             <label for="Nährstoffe::dünger_gut">Zeigt Dünger eine gute Wirkung?</label>
           </div>
-          </var>
-          <var><div onclick="check_box('Nährstoffe::dünger_schlecht')">
+          <div>
             <input type="radio" id="Nährstoffe::dünger_schlecht" name="dünger">
             <label for="Nährstoffe::dünger_schlecht">Zeigt Dünger nur eine mäßige Wirkung?</label>
           </div>
-          </var>
-          <var><div onclick="check_box('Nährstoffe::vergleichbar')">
+          <div>
             <input type="checkbox" id="Nährstoffe::vergleichbar" name="click me">
             <label for="Nährstoffe::vergleichbar">Sind ihre Erträge vergleichbar mit Feldnachbarn?</label>
           </div>
-          </var>
         <h2>Wasserspeicherfähigkeit</h2>
           <div>
             <input type="radio" id="Wasserspeicherfähigkeit::schnell" name="dränend">
