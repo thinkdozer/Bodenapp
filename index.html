@@ -45,16 +45,30 @@
         <div>
             <p>Humus ist abgestorbenes organisches Material. Der Humusgehalt von Böden ist ausschlaggebend für das Pflanzenwachstum, Bodenfruchtbarkeit und die Wasserspeicherfähigkeit eines Bodens.
               Außerdem sorgt er für eine gute Zersetzung der Ernterückstände und ist wichtig für die Bodenstruktur (Krümelstruktur) und das Bodenleben. </p>
+            <p>Um den Humusgehalt zu ermitteln können sie unsere <span class="link" onclick='move("fragen")'>Fragen</span> beantworten, was eine grobe Schätzung bietet. Wenn sie den Wert genauer wissen wollen, können sie mit ihrer Bodenart und dem ph-Wert
+              den Humusgehalt ausrechnen lassen: <span class="link" onclick='move("ph")'>ph-Wert</span>. Am genausten ermitteln sie den Humusgehalt mit der <span class="link" onclick='move("Brennprobe")'>Brennprobe</span>.<p>
         </div>
-        <div class="categories" onclick="window.location.href='Fragen.html'">
+        <div class="categories" id="fragen" onclick="window.location.href='Fragen.html'">
             Fragen
         </div>
-        <div class="categories" onclick="window.location.href='pH-Bestimmung.html'">
+        <div class="categories" id="ph" onclick="window.location.href='pH-Bestimmung.html'">
             pH-Bestimmung
         </div>
-        <div class="categories" onclick="window.location.href='Brennprobe.html'">
+        <div class="categories" id="Brennprobe" onclick="window.location.href='Brennprobe.html'">
             Brennprobe
         </div>
+        <script>
+        function move(element){
+          console.log("move()");
+          location.href= "#" + element;
+          document.getElementById(element).style.backgroundColor = "springgreen";
+          setTimeout(function(){}, 1000);
+          setTimeout(function()
+        {
+          document.getElementById(element).style.backgroundColor = "darkgreen";
+        }, 300);
+        }
+        </script>
 
         <script>
 	console.log("js starting");
