@@ -1,5 +1,5 @@
-function getvalues(){
-let x = {
+function getvalues(set){
+const x = {
     "boden": {
       "type": "radio",
       "fallback": "10",
@@ -68,10 +68,53 @@ let x = {
       "calculation": "addition",
       "assigns":{
         "Nährstoffe::dünger_gut": "3",
-        "Nährstoffe::dünger_schlecht": "-3",
-        "Nährstoffe::vergleichbar": "3"
+        "Nährstoffe::dünger_schlecht": "-3"
+      }
+    },
+    "nährstoffe::vergleichbar":{
+      "type": "checkbox",
+      "fallback": "0",
+      "calculation": "addition",
+      "assigns":{
+        "Nährstoffe::vergleichbar": "3",
+      }
+    },
+    "wasser":{
+      "type": "radio",
+      "fallback": "0",
+      "calculation": "addition",
+      "assigns":{
+        "Wasserspeicherfähigkeit::schnell": "-3",
+        "Wasserspeicherfähigkeit::langsam": "3",
+      }
+    },
+    "wasser::trockenperioden":{
+      "type": "checkbox",
+      "fallback": "0",
+      "calculation": "addition",
+      "assigns":{
+        "Wasserspeicherfähigkeit::trockenperioden": "3",
       }
     }
   };
-return x;
+const y = {
+    "geruch":{
+      "type": "radio",
+      "assigns":{
+        "Geruch::modrich": "Moderhumus",
+        "Geruch::moorig": "Rohhumus",
+        "Geruch::nichts": "Mullhumus"
+      }
+    }
+  };
+  if (set == "amount") {
+    return x;
+  } else if (set == "type") {
+    return y;
+  } else if (set == "all"){
+    let z = Object.assign(x, y);
+    return z;
+  } else {
+    console.log(" Err: no type given")
+  }
 }

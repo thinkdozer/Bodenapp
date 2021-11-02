@@ -34,6 +34,11 @@ input[type=text]{
   border-radius: 0.3em;
   padding: 0.1em;
 }
+input[type=number]{
+  border-width: medium;
+  border-radius: 0.3em;
+  padding: 0.1em;
+}
 img {
   border-radius: 0.3em;
 }
@@ -74,7 +79,7 @@ img {
     background-color: green;
 }
 .indented1{
-  margin-left: 20px;
+  margin-left: 1em;
 }
 .boden{
   name: boden;
@@ -85,6 +90,12 @@ img {
 
 .grid-container{
   display: grid;
+}
+.link{
+  font-style: italic;
+}
+.link:hover{
+  background-color: lightgrey;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -98,5 +109,8 @@ img {
   input{
     color: white;
     background: black;
+  }
+  .link:hover{
+    background-color: dimgrey;
   }
 }
