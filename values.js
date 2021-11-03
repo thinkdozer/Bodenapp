@@ -5,13 +5,13 @@ const x = {
       "fallback": "10",
       "calculation": "overwrite",
       "assigns":{
-        "boden::Sand": "20",
-        "boden::lehmSand": "21",
-        "boden::Schluff": "22",
-        "boden::schluffLehm": "23",
-        "boden::Lehm": "24",
-        "boden::liteTon": "25",
-        "boden::Ton": "26",
+        "boden::Sand": "10",
+        "boden::lehmSand": "12",
+        "boden::Schluff": "14",
+        "boden::schluffLehm": "15",
+        "boden::Lehm": "15",
+        "boden::liteTon": "13",
+        "boden::Ton": "12",
       }
     },
     "standort": {
@@ -19,8 +19,8 @@ const x = {
       "fallback": "0",
       "calculation": "addition",
       "assigns": {
-        "Standort::Naß": "5",
-        "Standort::Trocken": "-3",
+        "Standort::Naß": "2",
+        "Standort::Trocken": "-2",
       }
     },
     "lebewesen": {
@@ -28,8 +28,8 @@ const x = {
       "fallback": "0",
       "calculation": "addition",
       "assigns": {
-        "Lebewesen::Haufen": "3",
-        "Lebewesen::Gaenge": "3",
+        "Lebewesen::Haufen": "1",
+        "Lebewesen::Gaenge": "1",
       }
     },
     "rückstände":{
@@ -37,8 +37,8 @@ const x = {
       "fallback": "0",
       "calculation": "addition",
       "assigns": {
-        "Rückstände::vermodert": "5",
-        "Rückstände::ganz": "-5",
+        "Rückstände::vermodert": "2",
+        "Rückstände::ganz": "-1",
       }
     },
     "humuszehrer":{
@@ -46,8 +46,8 @@ const x = {
       "fallback": 0,
       "calculation": "addition",
       "assigns": {
-        "Fruchtfolge::humuszehrer": "-8",
-        "Fruchtfolge::humusgeber": "8",
+        "Fruchtfolge::humuszehrer": "-2",
+        "Fruchtfolge::humusgeber": "4",
       }
     },
     "fruchtfolge":{
@@ -55,10 +55,10 @@ const x = {
       "fallback": "0",
       "calculation": "addition",
       "assigns":{
-        "Fruchtfolge::nebenprodukte": "-3",
-        "Fruchtfolge::zwischenfrüchte": "4",
-        "Fruchtfolge::pfluglos": "3",
-        "Fruchtfolge::organik": "3",
+        "Fruchtfolge::nebenprodukte": "-2",
+        "Fruchtfolge::zwischenfrüchte": "3",
+        "Fruchtfolge::pfluglos": "2",
+        "Fruchtfolge::organik": "4",
         "Fruchtfolge::legominosen": "5"
       }
     },
@@ -67,8 +67,8 @@ const x = {
       "fallback": "0",
       "calculation": "addition",
       "assigns":{
-        "Nährstoffe::dünger_gut": "3",
-        "Nährstoffe::dünger_schlecht": "-3"
+        "Nährstoffe::dünger_gut": "2",
+        "Nährstoffe::dünger_schlecht": "-1"
       }
     },
     "nährstoffe::vergleichbar":{
@@ -76,7 +76,7 @@ const x = {
       "fallback": "0",
       "calculation": "addition",
       "assigns":{
-        "Nährstoffe::vergleichbar": "3",
+        "Nährstoffe::vergleichbar": "2",
       }
     },
     "wasser":{
@@ -84,7 +84,7 @@ const x = {
       "fallback": "0",
       "calculation": "addition",
       "assigns":{
-        "Wasserspeicherfähigkeit::schnell": "-3",
+        "Wasserspeicherfähigkeit::schnell": "-2",
         "Wasserspeicherfähigkeit::langsam": "3",
       }
     },
@@ -93,7 +93,7 @@ const x = {
       "fallback": "0",
       "calculation": "addition",
       "assigns":{
-        "Wasserspeicherfähigkeit::trockenperioden": "3",
+        "Wasserspeicherfähigkeit::trockenperioden": "2",
       }
     }
   };

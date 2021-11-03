@@ -48,7 +48,15 @@
           <p id="result">Ergebnis</p>
         </div>
         <script>
-          let obj = {"boden::Sand": {"6-7": "10", "8-9": "20"}, "boden::lehmSand":{"6-7": "40", "8-9": "50"}};
+          let obj = {
+            "boden::Sand": {
+              "0-6": "3",
+              "6.01-": "20"
+            },
+             "boden::lehmSand":{
+               "6-7": "40",
+               "8-9": "50"}
+          };
           let uobj = obj["boden::Sand"];
           console.log("uobj: ");
           console.log(uobj);
