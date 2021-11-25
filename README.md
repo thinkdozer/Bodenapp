@@ -8,7 +8,7 @@ Die *Bodenapp* hilft den Humusgehalt einzuschätzen, nachdem man ein paar Fragen
 
 ### Anfänger
 
-![haeae.github.io/Bodenapp](https://haeae.github.io/Bodenapp)
+![haeae.github.io/Bodenapp](https://haeae.github.io/Bodenapp/)
 
 ### Fortgeschrittene
 
