@@ -153,7 +153,10 @@
         <p>*dies ist aber nur eine grobe Schätzung basierend auf ihren Angaben, um einen genaueren Wert zu ermitteln wenden sie bitte die Brennprobe oder die pH-Bestimmung an</p>
         <script src="values.js"></script>
         <script>
+
+          
           function unset_all(){
+            //unsets all checkboxes and radios at start
             console.log("unset_all()");
             let obj = getvalues("all");
             for (let theme in obj){
@@ -167,6 +170,7 @@
 
 
           function extr_radio_2(obj, hum){
+            //changes amount of humus from a group of radios
             console.log("extr_radio_2(" + obj + ")");
             console.log(obj);
             console.log("obj.calculation = " + obj.calculation);
@@ -195,6 +199,7 @@
             return(hum);
           }
           function extr_checkbox(obj, hum){
+            //changes amount of humus from a group of checkboxey
             console.log("extr_checkbox(" + obj + ")");
             console.log(obj);
             console.log("obj.calculation = " + obj.calculation);
@@ -217,6 +222,7 @@
             return(hum);
           }
           function solve(){
+            //sets humus amount; runs on every click
             console.log("solve()");
             let obj = getvalues("amount");
             var hum = 10;

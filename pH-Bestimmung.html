@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body onclick="calculate()">
-        <h1>pH-Bestimmung</h1>
+        <h1>pH-Bestimmung <span style="color: red;">(Alpha)</span></h1>
         <div>
         <p> Welche Bodenart liegt auf ihren Flächen vor? ?
         <p>Wählen sie ihre Bodenart:</p>
@@ -48,10 +48,11 @@
           <p id="result">Ergebnis</p>
         </div>
         <script>
+          //tmp obj/delete later{
           let obj = {
             "boden::Sand": {
-              "0-6": "3",
-              "6.01-": "20"
+              "a": "-18",
+              "b": "97.9359"
             },
              "boden::lehmSand":{
                "6-7": "40",
@@ -60,6 +61,9 @@
           let uobj = obj["boden::Sand"];
           console.log("uobj: ");
           console.log(uobj);
+
+          //}
+          /*
           function check(one, range){
             let min = range.slice(0,1);
             let max = range.slice(2,3);
@@ -69,29 +73,37 @@
               return false;
             }
           }
-          function test(){
-            for (const i in obj) {
-              console.log(document.getElementById(i).checked);
-              if (document.getElementById(i).checked) {
-                console.log("i: ");
-                console.log(i);
-                let boden = obj[i];
-                for (let j in boden){
-                  console.log("j: " + j);
-                  if (check(document.getElementById("ph-wert").value, j)){
-                    console.log("hum: " + boden[j]);
-                    var hum = boden[j];
-                  }
-                }
-              }  
-            }
-            return hum;
-          }
+          */
+          
+         function test(){
+           //gives back current husmus value depending on the radios
+           for (const i in obj){
+             if (document.getElementById(i).checked){
+               console.log("i: ");
+               console.log(i);
+               let boden = obj[i];
+               let a = boden["a"];
+               let b = boden["b"];
+               console.log(a);
+               console.log(b);
+               let x = document.getElementById("ph-wert").value;
+               console.log("a: " + a + " x: " + x + " b: " + b);
+               var hum = Number(a) * Number(x) + Number(b);
+               console.log("hum: " + hum);
 
+             }
+           }
+           return hum;
+         }
+        
           function calculate(){
+            //sets current humus value / runs on every click
             document.getElementById("result").innerHTML = test() + "%";
           }
+          //sets default ph-vlaue
           document.getElementById("ph-wert").value = 7;
+
+          //unchecks every radio
           let radios = document.getElementsByName("boden");
           for (let i = 0; i < radios.length; i++) {
             radios[i].checked = false;
